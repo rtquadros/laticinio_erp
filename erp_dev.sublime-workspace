@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"param",
+				"mysqli_param_count"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\n\nabstract class ConnDb{\n\n  protected static $conn;\n  protected $servername = HOSTNAME;\n  protected $username = DB_USER;\n  protected $password = DB_PASSWORD;\n  protected $db = DB_NAME;\n  protected $backupFolder = BACKUPFOLDER;\n  protected $maxNumberFiles = MAXNUMBERFILES;\n  private $crud;\n  private $nParam;\n\n  // Conectaca com o banco de dados\n  protected function conectaDb(){\n    \n    try{\n      $conn = new PDO(\"mysql:host={$servername};dbname={$db}\", $username, $password);\n      return $conn;\n    } catch (PDOException $Erro){\n    \treturn $Erro->getMessage();\n    }\n\n  }\n\n  // Prepara as declarações PDO\n  private function preparaDeclaracao($query, $param){\n  \t$this->contarParam($param);\n    $this->crud = $this->conectaDb()->prepare($query);\n    \n    if($this->nParam > 0){\n      for($i=1; $i<=$this->nParam; $i++){\n        $this->crud->bindValue($i, $param[$i - 1]);\n      }\n    }\n    \n    $this->crud->execute();\n  }\n\n  // Contador de parâmetros\n  private function contarParam($param){\n  \t$this->nParam = count($param);\n  }\n\n}\n\n?>",
+			"file": "class/ConnDb.php",
+			"file_size": 1100,
+			"file_write_time": 132121053716412548,
+			"settings":
+			{
+				"buffer_size": 1046,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n/**\n * Configuração geral\n */\n \n// Caminho para a raiz\nif ( !defined('ABSPATH') )\n  define('ABSPATH', dirname(__FILE__) . '/');\n \n// Caminho para a pasta de uploads\ndefine( 'UP_ABSPATH', ABSPATH . '/uploads' );\n \n// URL da home\ndefine( 'HOME_URI', 'http://localhost/erp' );\n \n// Nome do host da base de dados\ndefine( 'HOSTNAME', 'localhost' );\n \n// Nome do DB\ndefine( 'DB_NAME', 'laticinio_erp' );\n \n// Usuário do DB\ndefine( 'DB_USER', 'root' );\n \n// Senha do DB\ndefine( 'DB_PASSWORD', '' );\n \n// Charset da conexão PDO\ndefine( 'DB_CHARSET', 'utf8' );\n \n// Se você estiver desenvolvendo, modifique o valor para true\ndefine( 'DEBUG', true );\n\n// Pasta para backup da base de dados\ndefine( 'BACKUPFOLDER', $_SERVER['DOCUMENT_ROOT'].'/bd_backups');\n\n// Número máximo de arquivos de backup mantidos\ndefine( 'MAXNUMBERFILES', 30 );\n\n// Usuário padrão\ndefine( 'DEFAULT_USER', 'admin' );\n\n// Senha do usuário padrão\ndefine( 'DEFAULT_PASS', '142536' );\n \n/**\n * Não edite daqui em diante\n */\n?>",
+			"file": "global_config.php",
+			"file_size": 1027,
+			"file_write_time": 132121065475587702,
+			"settings":
+			{
+				"buffer_size": 992,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/erp_dev",
+		"/C/xampp/htdocs/erp_dev/class"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/wordpress/wp-settings.php",
+		"/C/xampp/htdocs/erp_dev/index.php",
+		"/C/xampp/htdocs/phpinfo.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Conn"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"conn"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "class/ConnDb.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.3333333333,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "global_config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.3333333333
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "erp_dev.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 192.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
