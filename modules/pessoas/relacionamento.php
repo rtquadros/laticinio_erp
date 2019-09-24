@@ -1,7 +1,7 @@
 <?php
-if(isset($funcao) && $funcao == 'cadastrar'){
+if(isset($func) && $func == 'cadastrar'){
 ?>
-    <form method="post" action="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&funcao=insertRelacionamento">
+    <form method="post" action="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&func=insertRelacionamento">
         <div class="row">
             <div class="col-md-4">
             	<div class="form-group">
@@ -104,16 +104,16 @@ if(isset($funcao) && $funcao == 'cadastrar'){
         </span>
     </form>
 <?php
-} elseif(isset($funcao) && $funcao == 'editar'){
+} elseif(isset($func) && $func == 'editar'){
 	
 	if(isset($_GET['rel_id']) && !empty($_GET['rel_id'])){	
 		$result = $relacionamento->getRelacionamento(array('rel_id'=>$_GET['rel_id']));
 		$var = unserialize($result[0]['rel_variaveis']);
 	} else {
-		header('Location: index.php?mod=captacao_produtor&funcao=listar');
+		header('Location: index.php?mod=captacao_produtor&func=listar');
 	}
 ?>
-     <form method="post" action="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&funcao=updateRelacionamento">
+     <form method="post" action="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&func=updateRelacionamento">
         <div class="row">
             <div class="col-md-4">
             	<div class="form-group">
@@ -219,9 +219,9 @@ if(isset($funcao) && $funcao == 'cadastrar'){
 <?php	
 } else{
 ?>        	
-    <p><a class="btn  btn-primary" href="?mod=comercial_relacionamento&funcao=cadastrar" role="button">Cadastrar relacionamento</a> </p>
+    <p><a class="btn  btn-primary" href="?mod=comercial_relacionamento&func=cadastrar" role="button">Cadastrar relacionamento</a> </p>
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed dynatable">
+        <table class="table table-striped table-bordered table-sm datatable">
             <thead> 
                 <tr> 
                     <th>#</th> 
@@ -241,13 +241,13 @@ if(isset($funcao) && $funcao == 'cadastrar'){
                 ?>
                     <tr> 
                         <td><?php echo $row['rel_id']; ?></td> 
-                        <td><a href="?mod=comercial_relacionamento&funcao=editar&rel_id=<?php echo $row['rel_id']; ?>"><?php echo $row['rel_nome']; ?></a></td> 
+                        <td><a href="?mod=comercial_relacionamento&func=editar&rel_id=<?php echo $row['rel_id']; ?>"><?php echo $row['rel_nome']; ?></a></td> 
                         <td><?php echo $row['rel_apelido']; ?></td>
                         <td><?php echo $row['rel_documento']; ?></td>
                         <td><?php echo $row['rel_email']; ?></td>
                         <td><?php echo $row['rel_tel']; ?></td>
                         <td><?php echo $row['rel_desc']; ?></td>
-                        <td><a href="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&funcao=deleteRelacionamento&rel_id=<?php echo $row['rel_id']; ?>" class="btn btn-xs text-danger delete-confirm"><span class="glyphicon glyphicon-trash"></span><span class="sr-only">Excluir</span></a></td>
+                        <td><a href="modules/comercial/process.php?mod=<?php echo $_GET['mod']; ?>&func=deleteRelacionamento&rel_id=<?php echo $row['rel_id']; ?>" class="btn btn-xs text-danger delete-confirm"><span class="glyphicon glyphicon-trash"></span><span class="sr-only">Excluir</span></a></td>
                     </tr> 
                 <?php }?>
             </tbody>

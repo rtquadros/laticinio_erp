@@ -2,7 +2,7 @@
 
 abstract class ConnDb{
 
-  protected static $conn;
+  protected $conn;
   protected $servername = HOSTNAME;
   protected $username = DB_USER;
   protected $password = DB_PASSWORD;
@@ -16,8 +16,8 @@ abstract class ConnDb{
   protected function conectaDb(){
     
     try{
-        $conn = new PDO("mysql:host={$servername};dbname={$db}", $username, $password);
-        return $conn;
+      $this->conn = new PDO("mysql:host={$this->servername};dbname={$this->db}", $this->username, $this->password);
+      return $this->conn;
     } catch (PDOException $Erro){
     	return $Erro->getMessage();
     }
@@ -34,13 +34,58 @@ abstract class ConnDb{
         $this->crud->bindValue($i, $param[$i - 1]);
       }
     }
-    
+
     $this->crud->execute();
+
+    //print_r($this->crud);
+    //print_r($this->crud->errorInfo());
+    //print_r($param);
   }
 
   // Contador de parâmetros
   private function contarParam($param){
   	$this->nParam = count($param);
+  }
+
+  // Checa se a tabela existe
+  public function tabelaExiste($table){
+    $result = $this->conectaDb()->query("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '{$this->db}' AND table_name = '{$table}' LIMIT 1;"); 
+    
+    if($result->fetchColumn() > 0)
+      return true;
+    else 
+      return false;
+  }
+
+  // Select no DB
+  public function selectDb($campos, $tabela, $condicoes, $param){
+    $this->preparaDeclaracao("SELECT {$campos} FROM {$tabela} {$condicoes}", $param);
+    return $this->crud;
+  }
+
+  // Insert no DB
+  public function insertDb($tabela, $campos, $condicoes, $param){
+    $campos = implode(",", $campos);
+    $this->preparaDeclaracao("INSERT INTO {$tabela} ({$campos}) VALUES ({$condicoes})", $param);
+    return $this->crud;
+  }
+
+  // Update no DB
+  public function updateDb($tabela, $campos, $condicoes, $param){
+    $campos = implode("=?,", $campos)."=?";
+    $this->preparaDeclaracao("UPDATE {$tabela} SET {$campos} WHERE {$condicoes}", $param);
+    return $this->crud;
+  }
+
+  // Delete no DB
+  public function deleteDb($tabela, $condicoes, $param){
+    $this->preparaDeclaracao("DELETE FROM {$tabela} WHERE ({$condicoes})", $param);
+    return $this->crud;
+  }
+
+  // Último id inserido
+  public function lastInsertId(){
+    return $this->conn->lastInsertId();
   }
 
 }

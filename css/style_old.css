@@ -1,0 +1,415 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ===== General ===== */
+
+/* ===== Structure - General ===== */
+#loginbox{
+	float: none;
+	margin-top:10px;	
+}
+
+.recibo{
+	width:8.5cm;
+	height:9.5cm;
+	padding:0.5cm;	
+}
+
+.rodape {
+	padding:20px;	
+}
+
+.widget {
+	overflow:auto;
+	margin-bottom: 30px;	
+}
+
+.div-over{
+	overflow-y:auto;
+	max-height: 400px;	
+	margin-bottom:20px;
+}
+
+#resumo-conta .panel-body{
+	padding: 5px 10px 0 10px;	
+}
+
+/* ===== Include Fonts ===== */
+
+/* ===== Typography ===== */
+h3, h4{
+	margin-top: 0;	
+}
+
+/* ===== Navigation ===== */
+.pagination{
+	margin-top: 0;
+	float: left;	
+}
+
+.pagination a{
+	cursor: pointer;	
+}
+
+/* ======= Lists ======= */
+/*.produtoPDV{
+	width: 20%;
+	float: left;	
+}
+
+.produtoPDV .thumbnail{
+	height: 200px;	
+}
+
+.produtoPDV .disabled{
+	pointer-events: none;
+	box-shadow: none;
+    opacity: .65;	
+}*/
+.produtoPDV img {
+	float: left;
+    height: 60px;
+    margin: -5px 15px -5px -10px;
+}
+#lista-insumos, #lista-processos{
+	list-style-position: inside;	
+}
+#lista-insumos .list-group-item, #lista-processos .list-group-item {
+    display: list-item;
+}
+.list-group-item h4{
+	margin-bottom: 0;	
+}
+
+/* ===== Forms ===== */
+.mov-buttons .btn{
+	margin: 5px 0;	
+}
+
+.form-buttons{
+	padding-top: 25px;	
+}
+
+/* Estilo iOS */
+.onoffswitch {
+    position: relative; width: 40px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #D1D1D1; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 15px; padding: 0; line-height: 15px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #449D44; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #E0E0E0; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 20px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 21px;
+    border: 1px solid #D1D1D1; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/* ===== Tables ===== */
+tfoot td{
+	font-weight: bold;	
+}
+
+/* ===== Extra Class ===== */
+.inline-block {
+	display: inline-block;	
+}
+
+.row-margin-bottom{
+	margin-bottom: 20px;	
+}
+
+/* ===== Bootstrap fixes ===== */
+
+a:hover.thumbnail {
+	text-decoration: none;	
+}
+
+.alert{
+	padding: 5px 15px;		
+}
+
+.btn,
+.modal-footer .btn+.btn {
+	margin-bottom: 10px;	
+}
+table .btn, p .btn {
+	margin-bottom: 0px;	
+}
+
+/*.input-group{
+	margin-bottom: 10px;	
+}*/
+
+.list-group-item-success {
+	color: #fff;
+	background-color: #419641;	
+}
+
+.navbar{
+	margin-top: 5px;	
+}
+
+.navbar-brand{
+	/*background-image:url(../images/logo.png);*/
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;	
+	min-width: 120px;
+	padding: 5px;
+}
+
+.navbar-brand img{
+	height: 100%;
+}
+
+.nav-tabs{
+	margin-bottom: 15px;	
+}
+/*.pagination {
+	float: right;
+	margin-top: 0;	
+}
+
+.navbar-collapse {
+	padding: 0;	
+}
+
+.navbar-nav,
+.navbar-nav li{
+	width: 100%;	
+}
+
+.navbar-nav li,
+.nav-list li{
+	border-top: 1px solid #DDD;
+}*/
+
+.table .table {
+	margin-bottom: 0;	
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th{
+	background-color: #d9edf7;	
+}
+
+.datatable-search,
+.datatable-per-page{
+	display: inline-block;
+}
+
+.datatable-search,
+.datatable-per-page{
+	margin-right:10px;
+}
+
+.datatable-record-count{
+	margin: 5px 10px;
+	display: inline-block;	
+}
+
+.datatable-search{
+	float: left;	
+}
+
+/* Extra small devices (phones, up to 480px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+	.produtoPDV{
+		width: 50%;	
+	}
+	.table-responsive{
+		border: none;	
+	}
+	.nav-tabs{
+		border-bottom: none;	
+	}
+	.nav-tabs>li{
+		float: none;	
+	}
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+		border-bottom-color: #ddd;
+		background-color: #eee;	
+	}
+	.nav-tabs>li>a{
+		margin-right: 0;
+		border-radius: 4px;
+		border: 1px solid #ddd;	
+	}
+	
+	#resumo-conta .panel{
+		border: none;
+		margin-bottom: 5px;
+		box-shadow: none;	
+	}
+	
+	#resumo-conta .panel-body{
+		padding: 0px;	
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	.mov-buttons + .table-responsive{
+		clear:both;
+		position:relative;
+		top:-50px;
+		z-index:0;	
+	}
+	.mov-buttons{
+		float:right;
+		position:relative;
+		z-index:999;	
+	}
+}
+
+/* Large devices (large desktops, 1366px and up) */
+@media (min-width: 1300px) { 
+}
+
+@media print {
+	@page {
+		size: A4 landscape; !important
+		margin: 0.5cm; !important
+	}
+	table, figure {
+		page-break-inside: auto; !important
+	}
+	tr    { page-break-inside:avoid; page-break-after:auto !important}
+    thead { display:table-header-group !important}
+    tfoot { display:table-footer-group !important}
+	button,.print {
+		display: none;	!important
+	}
+	div[class^="col-"], .col-md-4{
+		float:left;
+	}
+	.col-md-12, .col-xs-12 { 
+		width:100% !important;
+	}
+	
+	.col-md-11, .col-xs-11 { 
+		width:91.66666667% !important;
+	}
+	
+	.col-md-10, .col-xs-10 { 
+		width:83.33333333% !important;
+	}
+	
+	.col-md-9, .col-xs-9 { 
+		width:75% !important;
+	}
+	
+	.col-md-8, .col-xs-8 { 
+		width:66.66666667% !important;
+	}
+	
+	.col-md-7, .col-xs-7 { 
+		width:58.33333333% !important;
+	}
+	
+	.col-md-6, .col-xs-6 { 
+		width:50% !important;
+	}
+	
+	.col-md-5, .col-xs-5 { 
+		width:41.66666667% !important;
+	}
+	
+	.col-md-4, .col-xs-4 { 
+		width:33.33333333% !important;
+	}
+	
+	.col-md-3, .col-xs-3 { 
+		width:25% !important;
+	}
+	
+	.col-md-2, .col-xs-2 { 
+		width:16.66666667% !important;
+	}
+	
+	.col-md-1, .col-xs-1 { 
+		width:8.33333333% !important;
+	}
+	
+	body {
+		margin: 0;
+		padding 0 !important;
+		min-width: 768px;
+	}
+	
+	.container {
+		width: auto;
+		min-width: 750px;
+	}
+	
+	body {
+		font-size: 11pt !important;
+	}
+	
+	a[href]:after {
+		content: none;
+	}
+	
+	.page-break {
+		page-break-after: always;
+	}
+	.table-sm>tbody>tr>td, 
+	.table-sm>tbody>tr>th, 
+	.table-sm>tfoot>tr>td, 
+	.table-sm>tfoot>tr>th, 
+	.table-sm>thead>tr>td, 
+	.table-sm>thead>tr>th {
+		padding: 0 5px !important;
+	}
+	
+	table { page-break-inside:auto }
+	tr    { page-break-inside:avoid; page-break-after:auto }
+	.table-bordered { border: 1px solid #000;}
+	.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th, .table>thead>tr>th, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th { border: 1px solid #000 !important;}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th { padding: 4px !important;}
+	
+	.text-right {
+		text-align:right;	
+	}
+}
