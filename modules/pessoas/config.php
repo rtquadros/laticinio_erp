@@ -9,11 +9,11 @@ $mod_config = array(
 	"menu_titulo" => "<span class='fas fa-users'></span> Pessoas",
 	'modulo' => "pessoas",
 	'pagina' => array(
-		'Funcionários' => 'funcionario',
-		'Clientes' => 'cliente',
-		'Fornecedores' => 'fornecedor',
+		'Colaboradores' => 'colaborador',
+		'Relacionamentos' => 'relacionamento',
 		'separator' => '',
-		'Folha de pagamento' => 'pagFunc',
+		'Folha de pagamento' => 'folhaPag',
+		'Controle de férias' => 'controleFerias',
 	)
 );
 ?>

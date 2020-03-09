@@ -1,3 +1,25 @@
+/* GENERAL */
+html, body{
+  height: 100%;
+}
+#main{
+  min-height: 100%;
+  padding-bottom: 3em;
+}
+footer{
+  height: 2em;
+  margin-top: -2em;
+  background-color: #efefef;
+  font-size: .8em;
+}
+/* TABLE */
+.table-nowrap{
+  white-space: nowrap;
+}
+/* BOOTSTRAP 4 FIXES */
+.modal-xlg{
+  max-width: 80%;
+}
 /* PRINTING UTILITIES*/
 @media print {
 	.page-break {

@@ -50,7 +50,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                 </div>
             </div>
         </div>
-        <input class="btn btn-success" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
+        <input class="btn btn-success <?php echo $_GET["func"] == 'editar' ? "update-confirm" : "";?>" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
         <input class="btn btn-secondary" type="reset" value="Limpar">
     </form>
 <?php

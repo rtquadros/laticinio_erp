@@ -72,7 +72,8 @@ abstract class ConnDb{
 
   // Update no DB
   public function updateDb($tabela, $campos, $condicoes, $param){
-    $campos = implode("=?,", $campos)."=?";
+    if(is_array($campos) && sizeof($campos) > 1) $campos = implode("=?,", $campos)."=?";
+    else $campos = $campos."=?";
     $this->preparaDeclaracao("UPDATE {$tabela} SET {$campos} WHERE {$condicoes}", $param);
     return $this->crud;
   }

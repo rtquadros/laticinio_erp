@@ -126,10 +126,8 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                 </div>
             </div>
         </div>
-        <span>
-            <input class="btn btn-success" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
-            <input class="btn btn-secondary" type="reset" value="Limpar">
-        </span>
+        <input class="btn btn-success <?php echo $_GET["func"] == 'editar' ? "update-confirm" : "";?>" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
+        <input class="btn btn-secondary" type="reset" value="Limpar">
         <input type="hidden" name="pessoa_categoria" value="produtor" />
     </form>
 <?php
@@ -169,7 +167,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                             echo $linha->getLinhaNome($var['linha_coleta']);
                             ?>
                             </td>
-                            <td><a href="modules/captacao/controlers/linhaControl.php?mod=<?php echo $_GET['mod']; ?>&pag=<?php echo $_GET['pag']; ?>&funcao=deleteProdutor&pessoa_id=<?php echo $row['pessoa_id']; ?>" class="btn btn-sm text-danger delete-confirm"><span class="fas fa-trash"></span><span class="sr-only">Excluir</span></a></td>
+                            <td><a href="modules/captacao/controlers/linhaControl.php?mod=<?php echo $_GET['mod']; ?>&pag=<?php echo $_GET['pag']; ?>&func=deleteProdutor&pessoa_id=<?php echo $row['pessoa_id']; ?>" class="btn btn-sm text-danger delete-confirm"><span class="fas fa-trash"></span><span class="sr-only">Excluir</span></a></td>
                         </tr> 
                     <?php }?>
                 </tbody>

@@ -5,7 +5,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
   $produtor = new Produtor();
   
   // Trata os inputs
-  if(isset($_POST)){
+  if(isset($_POST) && !empty($_POST)){
     $args = array(
       "pessoa_nome" => FILTER_SANITIZE_SPECIAL_CHARS,
       "pessoa_apelido" => FILTER_SANITIZE_SPECIAL_CHARS, 
@@ -32,7 +32,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
 
   }
 
-  if(isset($_GET)){
+  if(isset($_GET) && !empty($_GET)){
     $id = filter_input(INPUT_GET, "pessoa_id", FILTER_SANITIZE_NUMBER_INT);
   }
 

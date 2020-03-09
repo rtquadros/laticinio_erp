@@ -5,7 +5,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
   $usuario = new Usuario();
   
   // Trata os inputs
-  if(isset($_POST)){
+  if(isset($_POST) && !empty($_POST)){
     $args = array(
       "usu_nome" => FILTER_SANITIZE_SPECIAL_CHARS,
       "usu_senha" => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -27,7 +27,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
     $param["usu_modulos"] = serialize($usu_modulos);
   }
 
-  if(isset($_GET)){
+  if(isset($_GET) && !empty($_GET)){
     $id = filter_input(INPUT_GET, "usu_id", FILTER_SANITIZE_NUMBER_INT);
   }
 

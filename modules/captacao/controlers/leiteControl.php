@@ -1,13 +1,15 @@
 <?php
 require_once('../../../loader.php');
+$header = "../../../index.php?mod=captacao&pag=leite&func=visualizar";
 
 if(isset($_GET['func']) && !empty($_GET['func'])){
+  $config = new Configuracoes();
   $leite = new Leite();
   $produtor = new Produtor();
   $linha = new Linha();
   
   // Trata os inputs
-  if(isset($_POST)){
+  if(isset($_POST) && !empty($_POST)){
     $args = array(
       "leite_data" => array("filter"=>FILTER_CALLBACK, "options"=>array("FilterDb", "sanitizeDate")),
       "leite_prod_id" => FILTER_SANITIZE_NUMBER_INT, 
@@ -16,10 +18,9 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
       "leite_linha_id" => FILTER_SANITIZE_NUMBER_INT
     );
     $param = filter_input_array(INPUT_POST, $args);
-
   }
 
-  if(isset($_GET)){
+  if(isset($_GET) && !empty($_GET)){
     $id = filter_input(INPUT_GET, "leite_id", FILTER_SANITIZE_NUMBER_INT);
     $prod_id = filter_input(INPUT_GET, "prod_id", FILTER_SANITIZE_NUMBER_INT);
   }
@@ -30,8 +31,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
   }
   if($_GET['func'] == 'updateLeite'){ 
     $result = $leite->updateLeite($param, $id);
-  } 
-  if($_GET['func'] == 'deleteLeite') $result = $leite->deleteLeite($id); 
+  }  
 
   if($_GET['func'] == 'ajaxGetLeite'){ 
     $row = $produtor->selectProdutor("*", "WHERE pessoa_id=?", array($prod_id));
@@ -45,5 +45,5 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
 	
   require_once("../../../includes/controlersCallBack.php");
 } else {
-	header("Location:../../../index.php?mod=captacao&pag=leite&func=visualizar");
+	header($header);
 }

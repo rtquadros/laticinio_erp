@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light py-0" tabindex="-1">
   <a class="navbar-brand h1" href="index.php">
-  	<img class="d-inline-block align-top mr-3" src="<?php echo file_exists($config->getSiteLogo()) ? $config->getSiteLogo() : 'images/icons/ms-icon-70x70.png';?>" alt="<?php echo $config->getSiteNome();?>" width="30" height="30"><small><?php echo $config->getSiteNome();?></small>
+  	<img class="d-inline-block align-top mr-3" src="<?php echo file_exists($config->getConfig('site_logo')) ? $config->getConfig('site_logo') : 'images/icons/ms-icon-70x70.png';?>" alt="<?php echo $config->getConfig('site_name');?>" width="30" height="30"><small><?php echo $config->getConfig('site_name');?></small>
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

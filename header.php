@@ -6,7 +6,7 @@
     <title>
       <?php 
       $config = new Configuracoes();
-      echo $config->getSiteNome();
+      echo $config->getConfig("site_name");
       ?>
     </title>
     <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">

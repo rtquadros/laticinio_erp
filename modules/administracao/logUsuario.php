@@ -4,7 +4,7 @@
         	<p>
             <form method="post" action="">
                 <div class="input-group">
-                    <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref; ?>">
+                    <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref->format('m/Y'); ?>">
                     <div class="input-group-append">
                         <button type="submit" class="btn  btn-secondary"><span class="fas fa-search"></span> Buscar</button>
                     </div>
@@ -28,7 +28,7 @@
             <tbody> 
                 <?php 
                 $log = new LogAct();
-                $rows = $log->selectLogAct("*", "WHERE log_data BETWEEN ? AND ?", array($data_ini_mes->format("Y-m-d"), $data_fim_mes->format("Y-m-d")));
+                $rows = $log->selectLogAct("*", "WHERE log_data BETWEEN ? AND ?", array($mes_ref->format("Y-m-01"), $mes_ref->format("Y-m-t")));
                 foreach($rows as $row){
                     $usuario = new Usuario();
                 ?>

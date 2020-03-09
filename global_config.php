@@ -18,7 +18,10 @@ define( 'BACKUPFOLDER', $_SERVER['DOCUMENT_ROOT'].'/bd_backups/');
 
 // Número máximo de arquivos de backup mantidos
 define( 'MAXNUMBERFILES', 30 );
- 
+
+// Versão do sistema
+define( 'ERP_VERSION', '2.0.0');
+
 // URL da home
 define( 'HOME_URI', 'http://localhost/erp' );
  

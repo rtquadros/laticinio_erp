@@ -5,18 +5,16 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
   $linha = new Linha();
   
   // Trata os inputs
-  if(isset($_POST)){
+  if(isset($_POST) && !empty($_POST)){
     $args = array(
       "linha_nome" => FILTER_SANITIZE_SPECIAL_CHARS,
       "linha_carreteiro" => FILTER_SANITIZE_NUMBER_INT, 
-      "linha_comissao" => array("filter"=>FILTER_SANITIZE_NUMBER_FLOAT, "flags"=>FILTER_FLAG_ALLOW_THOUSAND)
+      "linha_comissao" => array("filter"=>FILTER_CALLBACK, "options"=>array("FilterDb", "sanitizeMoney"))
     );
     $param = filter_input_array(INPUT_POST, $args);
- 
-    $param["linha_comissao"] = str_replace(",", ".", $param["linha_comissao"]);
   }
 
-  if(isset($_GET)){
+  if(isset($_GET) && !empty($_GET)){
     $id = filter_input(INPUT_GET, "linha_id", FILTER_SANITIZE_NUMBER_INT);
   }
 

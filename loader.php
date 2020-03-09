@@ -70,19 +70,14 @@ foreach( $mods_folders as $folder ){
 // Define parâmetros de data do sistema
 if(isset($_POST['mes_ref']) && !empty($_POST['mes_ref'])){ 
   $mes_ref = filter_input(INPUT_POST, "mes_ref", FILTER_SANITIZE_SPECIAL_CHARS);
-  $_SESSION['mes_ref'] = $mes_ref;
+  $mes_ref = explode("/", $mes_ref);
+  $mes_ref = new DateTime("{$mes_ref[1]}-$mes_ref[0]-01");
+  $_SESSION['mes_ref'] = $mes_ref->format("Y-m-d");
 } elseif(isset($_SESSION['mes_ref']) && !empty($_SESSION['mes_ref'])) {
-  $mes_ref = $_SESSION['mes_ref'];
+  $mes_ref = new DateTime($_SESSION['mes_ref']);
 } else {
-  $mes_ref = date("m/Y");
+  $mes_ref = new DateTime();
 }
+$today = new DateTime();
 
-$data_explode = explode('/', $mes_ref);
-$mes = $data_explode[0];
-$ano = $data_explode[1];
-$total_dias_mes = cal_days_in_month(CAL_GREGORIAN,$mes, $ano);
-$data_ini_mes = new DateTime("{$ano}-{$mes}-01");
-$data_fim_1quinzena = new DateTime("{$ano}-{$mes}-15");
-$data_ini_2quinzena = new DateTime("{$ano}-{$mes}-16");
-$data_fim_mes = new DateTime("{$ano}-{$mes}-{$total_dias_mes}");
-$data_arr = array(1=>array($data_ini_mes, $data_fim_1quinzena), 2=>array($data_ini_2quinzena, $data_fim_mes));
+$data_arr = array(1=>array(1, 15), 2=>array(16, $mes_ref->format("t")));

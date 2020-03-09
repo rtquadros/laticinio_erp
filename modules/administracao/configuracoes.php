@@ -18,7 +18,7 @@
             </div>
         </div>
         <span class="pull-right">
-            <input class="btn btn-success" type="submit" value="Editar">
+            <input class="btn btn-success update-confirm" type="submit" value="Editar">
             <input class="btn btn-default" type="reset" value="Limpar">
         </span>
     </form>

@@ -13,7 +13,8 @@ class Linha extends ConnDb{
   public function getLinhaCarreteiro($id){
     $carreteiro_id = $this->selectlinha("linha_carreteiro", "WHERE linha_id=?", array($id));
     $carreteiro_nome = $this->selectDb("pessoa_nome", "pessoas", "WHERE pessoa_id=?", array($id));
-    $result = array("pessoa_id" => $carreteiro_id, "pessoa_nome" => $carreteiro_nome[0]["pessoa_nome"]);
+    $carreteiro_nome = $carreteiro_nome->fetchAll(PDO::FETCH_ASSOC);
+    $result = array("pessoa_id" => $carreteiro_id[0]["linha_carreteiro"], "pessoa_nome" => $carreteiro_nome[0]["pessoa_nome"]);
     return $result;
   }
 

@@ -1,7 +1,7 @@
 
 <?php
 if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'editar')){
-    
+
     if($_GET["func"] == 'cadastrar'){
       $action = "modules/captacao/controlers/leiteControl.php?mod={$_GET['mod']}&pag={$_GET['pag']}&func=insertLeite"; 
     } elseif($_GET["func"] == 'editar'){
@@ -16,7 +16,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
     }
 ?>
     <form method="post" action="<?php echo $action; ?>">
-        <div class="row">
+        <div class="form-row">
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="leite_data">Data</label>
@@ -38,10 +38,10 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                     <select class="form-control" name="leite_prod_id" id="leite_prod_id" required  tabindex="2" <?php echo isset($retorno) ? "readonly" : '';?>>
                     	<option disabled selected >Selecione o produtor</option>
                     	<?php
-						  $produtor = new Produtor();
-						  $rows = $produtor->selectProdutor("*", "ORDER BY pessoa_nome ASC", array());
-						  foreach($rows as $row){
-						    echo "<option value='{$row["pessoa_id"]}'";
+    					  $produtor = new Produtor();
+    					  $rows = $produtor->selectProdutor("*", "ORDER BY pessoa_nome ASC", array());
+    					  foreach($rows as $row){
+    					    echo "<option value='{$row["pessoa_id"]}'";
                             if(isset($retorno)){
                               echo $retorno[0]["leite_prod_id"] == $row["pessoa_id"] ? " selected " : " disabled ";
                             }
@@ -75,9 +75,9 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                     <select class="form-control" name="leite_linha_id" id="leite_linha_id" tabindex="5" >
                     	<option disabled selected>Selecione a linha</option>
                         <?php
-						$linha = new Linha();
+    					$linha = new Linha();
                         $rows = $linha->selectLinha("*", "", array());
-						foreach($rows as $row){
+    					foreach($rows as $row){
                           echo "<option value='{$row["linha_id"]}'";
                           echo isset($retorno) && $retorno[0]["leite_linha_id"] == $row["linha_id"] ? " selected " : '';
                           echo ">{$row['linha_nome']}</option>";  
@@ -87,7 +87,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                 </div>
             </div>
         </div>
-        <input class="btn btn-success" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
+        <input class="btn btn-success <?php echo $_GET["func"] == 'editar' ? "update-confirm" : "";?>" type="submit" value="<?php echo ucfirst($_GET['func']);?>">
         <input class="btn btn-secondary" type="reset" value="Limpar">
     </form>
 <?php
@@ -100,12 +100,12 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                     <div class="col-md-8">
                         <div class="form-group">
                             <label for="mes_ref">Mês para exportação</label>
-                            <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref; ?>">
+                            <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref->format('m/Y'); ?>">
                         </div>
                     </div>
                     <div class="col-md-4">
                     	<br />
-                        <button type="submit" class="btn  btn-default"><span class="glyphicon glyphicon-open"></span> Exportar</button>
+                        <button type="submit" class="btn  btn-default"><span class="fas fa-open"></span> Exportar</button>
                     </div>
             	</div>
             </form>
@@ -141,16 +141,16 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
         <div class="dropdown">
             <button type="button" class="btn btn-info btn-responsive dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-print"></span> Folhas de anotação</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=captacao_geral&mes_ref=<?php echo $mes_ref; ?>" role="button" target="_blank">Captação geral</a>
-                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=captacao_produtor&mes_ref=<?php echo $mes_ref; ?>" role="button" target="_blank">Captação por produtor</a>
-                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=controle_produtor&mes_ref=<?php echo $mes_ref; ?>" role="button" target="_blank">Controle do produtor</a>
+                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=captacao_geral&mes_ref=<?php echo $mes_ref->format('m/Y'); ?>" role="button" target="_blank">Captação geral</a>
+                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=captacao_produtor&mes_ref=<?php echo $mes_ref->format('m/Y'); ?>" role="button" target="_blank">Captação por produtor</a>
+                <a class="dropdown-item" href="print.php?mod=captacao&pag=leite&func=imprimir&modelo=controle_produtor&mes_ref=<?php echo $mes_ref->format('m/Y'); ?>" role="button" target="_blank">Controle do produtor</a>
             </div>
         </div>
       </div>
       <div class="col-3 mb-2 ml-auto">
         <form method="post" action="">
             <div class="input-group">
-                <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref; ?>">
+                <input type="text" class="form-control  monthpicker" name="mes_ref" id="mes_ref" value="<?php echo $mes_ref->format('m/Y'); ?>">
                 <div class="input-group-append">
                     <button type="submit" class="btn  btn-secondary"><span class="fas fa-search"></span> Buscar</button>
                 </div>
@@ -165,7 +165,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
         <?php
         for($i=1; $i<=2; $i++){
           echo "<li class='nav-item'><a class='nav-link";
-          if(date("j") > $data_arr[$i][0]->format("j") && date("j") < $data_arr[$i][1]->format("j")) echo " active";
+          if($today->format("j") >= $data_arr[$i][0] && $today->format("j") <= $data_arr[$i][1]) echo " active";
           echo "'  id='quinzena{$i}-tab' data-toggle='tab' href='#quinzena{$i}' role='tab' aria-controls='{$i}' aria-selected='true'>{$i}º Quinzena</a></li>";
         }
         ?>
@@ -176,79 +176,48 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
         <?php 
         for($i=1; $i<=2; $i++){ 
         ?>
-          <div role="tabpanel" class="tab-pane fade <?php echo date("j") > $data_arr[$i][0]->format("j") && date("j") < $data_arr[$i][1]->format("j") ? 'show active' : ''; ?>" id="<?php echo "quinzena".$i;?>" aria-labelledby="<?php echo "quinzena".$i;?>">
+          <div role="tabpanel" class="tab-pane fade <?php echo $today->format("j") >= $data_arr[$i][0] && $today->format("j") <= $data_arr[$i][1] ? 'show active' : ''; ?>" id="<?php echo "quinzena".$i;?>" aria-labelledby="<?php echo "quinzena".$i;?>">
             	<table class="table table-striped table-bordered table-sm datatable" id="<?php echo "table-quinzena".$i;?>">
                     <thead> 
                         <tr> 
                             <th>Produtor</th> 
                             <?php 
-                            $data_ini = $data_arr[$i][0]->format("j");
-                            $diff = $data_arr[$i][1]->diff($data_arr[$i][0])->format("%a") + $data_ini;
-                            for( $dia = $data_ini; $dia <= $diff; $dia++){ 
+                            for($dia = $data_arr[$i][0]; $dia <= $data_arr[$i][1]; $dia++){ 
                                 echo "<th>{$dia}</th>"; 
                             }?>
                             <th>Total</th> 
                         </tr> 
                     </thead>
-
-                    <tbody> 
-                        <?php
-                        // Busca todos os registros de coleta e ordena em uma nova array com a ID do produtor como key
-                        $produtor = new Produtor();
-                        $leite = new Leite();
-                        $coletas = $leite->selectLeite("*", "WHERE leite_data BETWEEN ? AND ?", array($data_arr[$i][0]->format("Y-m-d"), $data_arr[$i][1]->format("Y-m-d")));
-
-                        $coleta_arr = array();
-                        foreach($coletas as $coleta){
-                            if(!empty($coleta_arr[$coleta['leite_prod_id']])) array_push($coleta_arr[$coleta['leite_prod_id']], $coleta);
-                            else $coleta_arr[$coleta['leite_prod_id']] = array($coleta);
+                    <tbody>
+                      <?php
+                      $total_dia = array();
+                      $produtor = new Produtor();
+                      $leite = new Leite();
+                      $prod_ids = $leite->selectLeite("DISTINCT leite_prod_id", "WHERE leite_data BETWEEN ? AND ?", array($mes_ref->format("Y-m-{$data_arr[$i][0]}"), $mes_ref->format("Y-m-{$data_arr[$i][1]}")));
+                      foreach ($prod_ids as $key => $prod_id) {
+                        $total_produtor = 0;
+                        $produtor_nome = $produtor->getProdutorNome($prod_id["leite_prod_id"]);
+                        echo "<tr>";
+                        echo "<td>{$produtor_nome}</td>";
+                        for($dia = $data_arr[$i][0]; $dia <= $data_arr[$i][1]; $dia++){
+                          $retorno = $leite->selectLeite("*", "WHERE leite_prod_id=? AND leite_data=?", array($prod_id["leite_prod_id"], $mes_ref->format("Y-m-{$dia}")));
+                          if($retorno && $retorno[0]["leite_quantidade"] !== 0) {
+                            echo "<td><a href='?mod=captacao&pag=leite&func=editar&leite_id={$retorno[0]["leite_id"]}'>{$retorno[0]["leite_quantidade"]}</a></td>";
+                            $total_produtor += $retorno[0]["leite_quantidade"];
+                            if(isset($total_dia[$dia]) && is_numeric($total_dia[$dia])) $total_dia[$dia] += $retorno[0]["leite_quantidade"];
+                            else $total_dia[$dia] = $retorno[0]["leite_quantidade"];
+                          } else
+                            echo "<td>--</td>";
                         }
-                        $total_dia = array();
-                        
-                        foreach($coleta_arr as $key=>$col){
-                        ?>
-                            <tr> 
-                                <td>
-                                <?php 
-                                if($produtor->getProdutorNome($key)){
-                                  echo "<a href='?mod=captacao_produtor&funcao=editar&prod_id={$key}'>{$produtor->getProdutorNome($key)}</a>";
-                                } else 
-                                  echo "<span class='text-danger'>Produtor não encontrado <span class='fas fa-alert text-danger'></span></span>"; 
-                                ?>
-                                </td>
-                                <?php
-                                $quant = 0;
-                                $total_produtor = 0;
-                                for( $dia = $data_ini; $dia <= $diff; $dia++){ 
-                                    foreach($col as $coleta){
-                                        if ( date('j', strtotime($coleta['leite_data'])) == $dia){
-                                            $leite_id = $coleta['leite_id'];
-                                            $quant = $coleta['leite_quantidade'];
-                                            $total_produtor += $quant;  
-                                        }
-                                    }
-                                    // Define o total do dia
-                                    if(isset($total_dia[$dia]) && is_numeric($total_dia[$dia])) $total_dia[$dia] += $quant;
-                                    else $total_dia[$dia] = $quant;  
-                                ?>
-                                    <td>
-                                    <?php 
-                                    if(isset($quant) && !empty($quant) || $quant != 0) 
-                                        echo "<a href='?mod=captacao&pag=leite&func=editar&leite_id={$leite_id}'>{$quant}</a>"; 
-                                    else echo '--'; 
-                                    ?>
-                                    </td>
-                                <?php 
-                                  $quant = 0;
-                                }?>
-                                <td><?php echo $total_produtor;?></td>
-                            </tr> 
-                        <?php }?>
+                        echo "<td>{$total_produtor}</td>";
+                        echo "</tr>";
+                      }
+                      ?>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td>Total diário</td>
-                            <?php for( $dia = $data_ini; $dia <= $diff; $dia++){?>
+                            <?php for($dia = $data_arr[$i][0]; $dia <= $data_arr[$i][1]; $dia++){?>
                               <td><?php echo isset($total_dia[$dia]) ? $total_dia[$dia] : 0; ?></td>  
                             <?php }?>
                             <td><?php echo array_sum($total_dia);?></td>

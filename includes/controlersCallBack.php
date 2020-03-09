@@ -14,5 +14,5 @@ $logAct->insertLogAct($result + $_GET);
 //Transmite o resultado para página original através de $_SESSION
 $_SESSION['result'] = $result;
 // Define o header
-if(!isset($header)) $header = "../../../index.php?mod={$_GET["mod"]}&pag={$_GET["pag"]}&func=visualizar";
+if(!isset($header)) $header = "../../../index.php";
 header('Location:'.$header);

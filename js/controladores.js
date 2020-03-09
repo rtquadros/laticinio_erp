@@ -19,7 +19,7 @@ $(document).ready( function() {
 			autoclose: true,
 			todayHighlight: true
 		});
-		
+
 		$('.monthpicker').attr('type', 'text').datepicker({
 			language: 'pt-BR',
 			autoclose: true,
@@ -146,19 +146,11 @@ $(document).ready( function() {
 	//Plugin datatable
 	$('table.datatable').each(function(i,e) {
 		$(this).DataTable({
+			"order": [],
             "language": {
                 "url": "js/datatable_ptbr.json"
             }
-        }).on('click', '.mov_pago', function(e){
-			var contain = $(this).parents('.onoffswitch');
-			var value;
-			
-			if($(contain).find('.mov_pago:checked').length) value = 1;
-			else value = 0;
-			
-			var url = 'modules/financeiro/process.php?func=setPago&mov_id='+$(this).data('id')+'&mov_pago='+value;
-			getDados(url, function(dados){$('#saldo-conta').html(dados.conta_saldo.toLocaleString('pt-BR', formato))});
-		});
+        })
 	});
 	
 	// Preview de imagem 

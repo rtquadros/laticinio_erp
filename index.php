@@ -4,7 +4,7 @@ require_once("includes/loginCheck.php");
 require_once("header.php");
 require_once("navigation.php");
 ?>
-<div class="row">
+<div id="main" class="row">
   <div class="col">
     <?php
     $path = "dashboard.php";

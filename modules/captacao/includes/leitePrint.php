@@ -15,7 +15,7 @@ if(isset($_GET["modelo"]) && $_GET["modelo"] == 'captacao_geral'){
     <h4>
       <small>LATICÍNIO NOVA VISTA</small><br />
       FOLHA DE COLETA<br />
-      <small>Período de <?php echo $data_arr[$i][0]->format("d/m/Y").' a '.$data_arr[$i][1]->format("d/m/Y");?></small>
+      <small>Período de <?php echo $mes_ref->format("{$data_arr[$i][0]}/m/Y").' a '.$mes_ref->format("{$data_arr[$i][1]}/m/Y");?></small>
     </h4>
     <table class="table table-bordered table-sm" id="1quinzena">
       <col style="width: 3em;">
@@ -25,9 +25,7 @@ if(isset($_GET["modelo"]) && $_GET["modelo"] == 'captacao_geral'){
           <th>ID</th>
           <th>Produtor</th> 
           <?php 
-          $data_ini = $data_arr[$i][0]->format("j");
-          $diff = $data_arr[$i][1]->diff($data_arr[$i][0])->format("%a") + $data_ini;
-          for( $dia = $data_ini; $dia <= $diff; $dia++){ 
+          for($dia = $data_arr[$i][0]; $dia <= $data_arr[$i][1]; $dia++){ 
             echo $dia < 10 ? "<th>0{$dia}</th>" : "<th>{$dia}</th>"; 
           }?>
         </tr> 
@@ -82,7 +80,7 @@ if(isset($_GET["modelo"]) && $_GET["modelo"] == 'captacao_geral'){
             <h4>
                 <small>LATICÍNIO NOVA VISTA</small><br />
                 CONTROLE DE LEITE ENTREGUE<br />
-                PRODUTOR: <?php echo $row['pessoa_nome']; ?> | PERÍODO: <?php echo $mes_ref;?>
+                PRODUTOR: <?php echo $row['pessoa_nome']; ?> | PERÍODO: <?php echo $mes_ref->format('m/Y');?>
             </h4>
             <table class="table table-bordered table-sm">
                 <thead> 
@@ -96,7 +94,7 @@ if(isset($_GET["modelo"]) && $_GET["modelo"] == 'captacao_geral'){
                     </tr> 
                 </thead> 
                 <tbody>
-                    <?php for($dia=1; $dia<=$total_dias_mes; $dia++){ ?>
+                    <?php for($dia=1; $dia<=$mes_ref->format("t"); $dia++){ ?>
                         <tr>
                             <td><?php echo $dia;?></td>
                             <td></td>
