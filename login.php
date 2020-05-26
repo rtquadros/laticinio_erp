@@ -20,7 +20,7 @@ require_once("header.php");
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-4 mx-auto">
+    <div class="col-sm-4 mx-auto mt-5">
       <div id="loginbox" class="card">
         <div class="card-header">
           <h3 class="card-title">Faça login!</h3>

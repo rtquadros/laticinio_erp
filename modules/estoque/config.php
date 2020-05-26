@@ -9,12 +9,12 @@ $mod_config = array(
 	'menu_titulo' => '<span class="fas fa-boxes"></span> Estoque',
 	'modulo' => 'estoque',
 	'pagina' => array(
-		'Produtos/Insumos' => 'produto',
+		'Itens' => 'produto',
 		'Receitas de produção' => 'receita',
 		'Controle de produção' => 'producao',
 		'separator' => '',
 		'Extrato produ&ccedil;&atilde;o' => 'extratoProducao',
-		'Relat&oacute;rio de estoque' => 'relatorioEstoque'
+		'Relat&oacute;rio de estoque' => 'estoqueReport'
 	)
 );
 ?>

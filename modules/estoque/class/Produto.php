@@ -27,6 +27,21 @@ class Produto extends ConnDb{
     return $result[0]["prod_unidade"];
   }
 
+  public function getValidadeProduto($id){
+    $result = $this->selectProduto("prod_validade", "WHERE prod_id=?", array($id));
+    return $result[0]["prod_validade"];
+  }
+
+  public function getCustoProduto($id){
+    $result = $this->selectProduto("prod_preco_custo", "WHERE prod_id=?", array($id));
+    return $result[0]["prod_preco_custo"];
+  }
+
+  public function getCodbarrasProduto($id){
+    $result = $this->selectProduto("prod_codbarras", "WHERE prod_id=?", array($id));
+    return $result[0]["prod_codbarras"];
+  }
+
   public function selectProduto($campos, $condicoes, $param){
     $result = $this->selectDb($campos, "produto", $condicoes, $param);
     return $result->fetchAll(PDO::FETCH_ASSOC);

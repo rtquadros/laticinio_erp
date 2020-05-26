@@ -41,7 +41,12 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
     }
   }
   if($_GET['func'] == 'getProduto'){
-    $result = $produto->selectProduto("*", "WHERE prod_id=?", array($id));
+    if(isset($_GET['prod_tipo'])){ 
+      $prod_tipo = filter_input(INPUT_GET, "prod_tipo", FILTER_SANITIZE_SPECIAL_CHARS);
+      $result = $produto->selectProduto("*", "WHERE prod_tipo=?", array($prod_tipo));
+    } else {
+      $result = $produto->selectProduto("*", "WHERE prod_id=?", array($id));
+    }
     echo json_encode($result[0]);
     exit();
   }

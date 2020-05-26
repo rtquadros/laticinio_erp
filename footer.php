@@ -1,4 +1,4 @@
-	<footer class="d-none d-md-block row">
+	<footer class="d-none d-md-block row fixed-bottom">
 	  <section class="col">
         <p class="m-0 py-1"> 
         <?php 

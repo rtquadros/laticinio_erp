@@ -1,163 +1,154 @@
 // JavaScript Document
 $(document).ready( function() {
-	//Consulta banco via Ajax
-	function getDados(url, handleData){
-		$.ajax({
-			type: 'GET',
-			url: url,
-			dataType: "json",
-			success:function(data, textStatus, jqXHR){
-				//console.log('ok');
-				if(data != ''){
-					handleData(data);
-				}
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				console.log(errorThrown);    
-			}	
-		});	
-	}
-
-	function getHTML(url, handleData){
-		$.ajax({
-			type: 'GET',
-			url: url,
-			dataType: "html",
-			success:function(data, textStatus, jqXHR){
-				if(data != ''){
-					handleData(data);
-				}
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				console.log(errorThrown);    
-			}	
-		});	
-	}
-	
 	//Funções entrada em estoque
-	function btnAcoes(obj){
-		$(obj).on('click', '.entrada-estoque', function(e){
-			e.preventDefault();
-
-			$('#modal_estoque').modal();	
-		});
-	};
-	btnAcoes($(this));
-
-	//Funções para a lista de insumos
-	function insereInsumo(insumo){
-		var table = $("#lista-insumos tbody");
-		var n = $(table).find(".item-insumos").length + 1;
-		var modelo_insumo;
-		if(insumo){
-			var url = 'modules/estoque/controlers/produtoControl.php?func=getProduto&prod_id='+insumo.insumo_id;
-			getDados(url, function(produto){
-				modelo_insumo = '<tr class="item-insumos"><td>'+produto.prod_nome+'</td><td>'+produto.prod_unidade+'</td><td>'+insumo.insumo_quant+'</td><td></td><td></td><td></td></tr>';
-				$(modelo_insumo).appendTo(table);
-			});
-		} else {
-			modelo_insumo = '<tr class="item-insumos"><td></td><td><select id="insumo_id_'+n+'" name="insumo_id[]" class="form-control" required=""><option>-- Selecione --</option></select></td><td></td><td></td><td></td><td></td><td><input type="number" id="quant_lote" name="quant_lote" class="form-control" required></td><td><a href="#" class="btn btn-xs text-danger btn-remover"><span class="fas fa-trash"></span><span class="sr-only">Excluir</span></a></td></tr>';
-			$(modelo_insumo).appendTo(table);
-		}
-		
-	}
-	
-	/*$('#lista-insumos').on('change', '#insumo_id', function(e) {
-		e.preventDefault();
-		atualizaEstoque($(this).parents('tr'));	
-	});*/
-	
-	/*function atualizaEstoque(insumo){
-		var insumo_id = $(insumo).find('#insumo_id').val();
-		var estoque_input = $(insumo).find('#insumo_estoque');
-		var url = 'modules/estoque/receitaControl.php?func=getInsumos';
-		getDados(url, function(retorno){
-			produtos = retorno.produtos;
-			$(produtos).each(function(i, e) {
-				if(produtos[i].prod_id == insumo_id){
-					insumo_estoque = parseFloat(parseFloat(produtos[i].prod_estoque).toFixed(2));
-					insumo_estoque_min = parseFloat(parseFloat(produtos[i].prod_estoque_min).toFixed(2));	
+	$("#modal_estoque").on("show.bs.modal", function(e){
+		var modal = $(this);
+		var producao_id = $(e.relatedTarget).data("producao-id");
+		var url = 'modules/estoque/controlers/producaoControl.php?func=entradaEstoque&producao_id='+producao_id;
+		getDados(url, function(result){
+			$.each(result, function(index, element){
+				if(index == "estoque_fabricacao" || index == "estoque_validade"){
+					$(modal).find("#"+index).datepicker('setDate', element);
+				} else if (index == "prod_nome" || index == "prod_unidade"){
+					$(modal).find("#"+index).html(element);
+				} else if (index == "estoque_entrada_id" ){
+					$(modal).find("#"+index).val(JSON.stringify(element));
+				} else {
+					$(modal).find("#"+index).val(element);
 				}
 			});
-			
-			//Adiciona o valor de estoque do insumo e caso esteja a baixo do mínimo alerta
-			if(insumo_estoque <= insumo_estoque_min){
-				$(estoque_input).parents('td').html('<div class="form-group has-error has-feedback"><input type="text" class="form-control" id="insumo_estoque" name="insumo_estoque[]" size="2" value="'+ insumo_estoque +'" readonly><span class="fas fa-exclamation-triangle form-control-feedback" aria-hidden="true" title="Estoque baixo!"></span></div>');
-			} else {
-				$(estoque_input).parents('td').html('<input type="text" class="form-control" id="insumo_estoque" name="insumo_estoque[]" size="2" value="'+ insumo_estoque +'" readonly>'); 	
-			}
-		});	
-	}*/
-	
-	$('#btn-inserir-insumo').on('click', function(e){
-		e.preventDefault();
-		insereInsumo();
-		$('form').validator('update');
-		$('.peso').mask("#.##0,00", {reverse: true});
+		});
 	});
-	
-	//Funções para a lista de processos
-	function insereProcesso(table, item_processo){
-		var n = $(table).find(".item-processos").length + 1;
-		var modelo_processos = '<tr class="item-processos" draggable="true"><td><span class="btn btn-xs"><span class="fas fa-arrows-alt"></span><span class="sr-only">Mover</span></span></td><td><input type="text" class="form-control" id="processo_nome_'+n+'" name="processo_nome[]" placeholder="Identificação" value="" required></td><td><input type="text" class="form-control" id="processo_equip_'+n+'" name="processo_equip[]" placeholder="Equipamento" value=""></td><td><input type="text" class="form-control duracao" id="processo_duracao_'+n+'" name="processo_duracao[]" placeholder="00:00" size="2" value="" required></td><td><div class="input-group"><input type="text" class="form-control peso" id="processo_limite_'+n+'" name="processo_limite[]" placeholder="0,00" size="2" value="" required><div class="input-group-append"><span class="input-group-text">Kg/Lt</span></div></div></td><td><a href="#" class="btn btn-xs text-danger btn-remover"><span class="fas fa-trash"></span><span class="sr-only">Excluir</span></a></td></tr>';
-		//Insere o modelo de item
-		var processo = $(modelo_processos).appendTo(table);
-		if(item_processo != null){
-			$(processo).find('#processo_nome_'+n).val(item_processo.processo_nome);
-			$(processo).find('#processo_equip_'+n).val(item_processo.processo_equip);
-			$(processo).find('#processo_duracao_'+n).val(item_processo.processo_duracao);
-			$(processo).find('#processo_limite_'+n).val(item_processo.processo_limite);	
-		}
-		return processo;
+
+	//Funções para inserir insumos e processos
+	var rec_insumos = [];
+	var rec_processos = [];
+
+	$('#modal_empenho').modal({
+		show: false
+	});
+
+	function insereInsumo(insumo_index){
+		var insumo = rec_insumos[insumo_index];
+		var url = 'modules/estoque/controlers/produtoControl.php?func=getProduto&prod_id='+insumo.insumo_id;
+		getDados(url, function(produto){
+			//Adiciona os detalhes do produto ao objeto insumo
+			rec_insumos[insumo_index].insumo_detalhes = produto;
+			var modelo_insumo = '<tr class="item-insumos" id="insumo-'+insumo_index+'"><td>'+insumo.insumo_id+'</td><td>'+produto.prod_nome+'</td>';
+			modelo_insumo += '<td>'+produto.prod_unidade+'</td><td class="insumo-quant">'+insumo.insumo_quant+'</td><td class="total-empenhado"></td>';
+			modelo_insumo += '<td class="text-right"><button type="button" class="btn btn-sm btn-primary empenhar-insumo" data-insumo-index="'+insumo_index+'"><span class="fas fa-plus-circle"></span> Empenhar</button></td></tr>';
+			$(modelo_insumo).appendTo($("#lista-insumos tbody"));
+		});
 	}
-	
-	$('#btn-inserir-processo').on('click', function(e){
+
+	function insereProcesso(processo){
+		var table = $("#lista-processos tbody");
+		var n = $(table).find(".item-processos").length + 1;
+		var modelo_processo = '<tr class="item-processos" id="processo-'+n+'"><td>'+n+'</td><td>'+processo.processo_nome+'</td><td>'+processo.processo_equip+'</td><td>'+processo.processo_duracao+'</td><td>'+processo.processo_limite+'</td></tr>';
+		$(modelo_processo).appendTo(table);
+	}
+
+	function detalheEstoque(insumo_index, estoque_index){
+		var estoque = rec_insumos[insumo_index].insumo_estoque[estoque_index];
+		var linha = '<tr><td>'+formatData(estoque.estoque_data_entrada)+'</td><td>'+estoque.estoque_quant_atual+'</td>';
+		linha += '<td>'+formatData(estoque.estoque_validade)+'</td></tr>';
+		$("#detalhe-estoque tbody").html(linha);
+		$("#estoque_quant_empenhada").val("");
+		$("#estoque_quant_empenhada").data("maxval", estoque.estoque_quant_atual);
+	}
+
+	function insereEmpenho(insumo_index, estoque_index, form){
+		var post = {};
+		var valido = true;
+		var insumo_estoque = rec_insumos[insumo_index].insumo_estoque[estoque_index];
+
+		$(form).each(function(i, e){
+			post[e.name] = e.value;
+		});
+
+		// Testa se o lote já foi empenhado
+		if(!rec_insumos[insumo_index].insumo_empenhos) rec_insumos[insumo_index].insumo_empenhos = [];
+		else {
+			$(rec_insumos[insumo_index].insumo_empenhos).each(function(index, element){
+				if(element !== null && element.estoque_id == post.estoque_id) valido = false;
+			});
+		}
+
+		if(valido){
+			var empenho = {
+				"estoque_id": post.estoque_id,
+				"estoque_quant_empenhada": parseFloat(post.estoque_quant_empenhada.replace(',','.'))
+			};
+
+			// Testa se há um espaço vazio no array para ser preenchido pelo novo empenho
+			var empenho_index = rec_insumos[insumo_index].insumo_empenhos.indexOf(null);
+	    if (empenho_index > -1) {
+	        rec_insumos[insumo_index].insumo_empenhos[empenho_index] = empenho;
+	    } else {
+	        rec_insumos[insumo_index].insumo_empenhos.push(empenho);
+	        empenho_index = rec_insumos[insumo_index].insumo_empenhos.length - 1;
+	    }
+
+			if($("#insumo-empenho-"+insumo_index).length == 0){
+				var tabela = '<tr id="insumo-empenho-'+insumo_index+'"> <td colspan="6" class="pl-5"> <table class="table table-sm table-borderless mb-0" style="border-left:3px solid #000;" >';
+				tabela += '<thead><tr class="bg-white"><th class="pl-4">Lote</th> <th>Entrada</th> <th>Validade</th> <th>Em estoque</th> <th>Empenhado</th> <th></th> </tr> </thead>';
+				tabela +='<tbody></tbody></table></td></tr>'; 
+				$("#insumo-"+insumo_index).after(tabela);
+			}
+
+			var linha = '<tr class="bg-white" id="empenho-'+empenho_index+'"> <td class="pl-4 pb-0">'+insumo_estoque.estoque_lote+'</td>';
+			linha += '<td class="pb-0">'+formatData(insumo_estoque.estoque_data_entrada)+'</td> <td class="pb-0">'+formatData(insumo_estoque.estoque_validade)+'</td>';
+			linha += '<td class="pb-0">'+insumo_estoque.estoque_quant_atual+'</td> <td class="pb-0">'+post.estoque_quant_empenhada+'</td>';
+			linha += '<td class="pb-0"><button title="Excluir" class="btn btn-sm removeEmpenho text-danger" data-insumo-index="'+insumo_index+'" data-empenho-index="'+empenho_index+'"><span class="fas fa-trash"></span></button></td> </tr>'; 
+			$("#insumo-empenho-"+insumo_index).find("tbody").append(linha);
+			empenhoTotal(insumo_index);
+		} else bootbox.alert("Lote já empenhado.");
+	}
+
+	function empenhoTotal(insumo_index){
+		var total = 0;
+		$.each(rec_insumos[insumo_index].insumo_empenhos, function(i, e){
+			if(e !== null) total += e.estoque_quant_empenhada;
+		});
+		$("#insumo-"+insumo_index).find(".total-empenhado").html(total.toFixed(2).replace('.',','));
+	}
+
+	//Funções formulário de produção
+	$(document).on('change', '#producao_rec_id', function(e){
 		e.preventDefault();
-		insereProcesso('#lista-processos tbody');
-		$('form').validator('update');
-		$('.sorted_table').sortable({
-			containerSelector: 'table',
-			itemPath: '> tbody',
-			itemSelector: 'tr',
-			placeholder: '<tr class="placeholder"/>',
-			handle: '.fa-arrows-alt'
-		});	
-		$('.peso').mask("#.##0,00", {reverse: true});
-		$('.duracao').mask('##00:00', {reverse: true});
-	});
-		
-	//Controle de produção
-	$('#producao_rec_id').on('change', function(e){
-		e.preventDefault();
-		
-		var itens_insumos = new Array();
-		var itens_processos = new Array();
 		
 		$('#lista-insumos tbody').html('');
 		$('#lista-processos tbody').html('');
 		
 		if($(this).val() == ''){ 
-			$('#lista-insumos tbody').html('');
-			$('#lista-processos tbody').html('');
+			$("#producao_quant").attr("disabled", "disabled");
+			$("#producao_prod_und span").html("--");
 		} else{
 			var url = 'modules/estoque/controlers/receitaControl.php?func=getReceita&rec_id=' + $(this).val();
 			getDados(url, function(retorno){
-				var produtoUnd = retorno.produtoUnd;
-				itens_insumos = retorno.itens_insumos;
-				itens_processos = retorno.itens_processos;
-				
-				//Adiciona a unidade do produto no input de quantidade
-				$("#producao_prod_und span").html(produtoUnd);
+				rec_insumos = retorno.rec_insumos;
+				rec_processos = retorno.rec_processos;
 
 				//Adicona o insumo da receita na lista de insumos
-				$(itens_insumos).each(function(index, element) {
-					var insumo = insereInsumo(itens_insumos[index]);
+				$(rec_insumos).each(function(index, element) {
+					insereInsumo(index);
         });
 				
 				//Adiciona o processo 
-				$(itens_processos).each(function(index, element) {
-					var processo = insereProcesso('#lista-processos tbody', itens_processos[index]);
+				$(rec_processos).each(function(index, element) {
+					insereProcesso(rec_processos[index]);
         });
+
+        // Adiciona detalhes do produto
+        $("#producao_prod_id").val(retorno.rec_prod_id);
+				url = 'modules/estoque/controlers/produtoControl.php?func=getProduto&prod_id='+retorno.rec_prod_id;
+				getDados(url, function(retorno){	
+					$("#producao_quant").removeAttr("disabled");
+					$.each(retorno, function(key, value){
+						$("#"+key).html(value);
+						if(key == "prod_imagem") $("#"+key).attr("src", value);
+					});
+				});
 			});
 		}
 
@@ -165,31 +156,99 @@ $(document).ready( function() {
 			e.preventDefault();
 		
 			var quant = $(this).val().replace(',','.');
-			$('#lista-insumos tbody tr').each(function(i,e){
-				if(itens_insumos.length > i){
-					var insumo_quant = itens_insumos[i].insumo_quant.replace(',','.');
+			$('#lista-insumos .item-insumos').each(function(i,e){
+				if(rec_insumos.length > i){
+					var insumo_quant = rec_insumos[i].insumo_quant.replace(',','.');
 					var result = parseFloat(insumo_quant) * parseFloat(quant);
-					$(e).find('[id*=insumo_quant]').val(result.toFixed(2).replace('.',','));	
+					$(e).find('.insumo-quant').html(result.toFixed(2).replace('.',','));	
 				}
 			});
 		});
 	});
 
-	//Plugin inserir multiplos itens
-	if(jQuery().sortable) {
-		$('.sorted_table').sortable({
-			containerSelector: 'table',
-			  itemPath: '> tbody',
-			  itemSelector: 'tr',
-			  placeholder: '<tr class="placeholder"/>',
-			handle: '.fa-arrows-alt'
-		});	
-	}
-	
-	$('#lista-insumos, #lista-processos').on('click', '.btn-remover', function(e){
+	//Funções modal de empenho de insumos
+	$(document).on("click", ".empenhar-insumo", function(e){
 		e.preventDefault();
-		if($(this).parents('tbody').find('tr').length > 1) $(this).parents('tr').remove();
-		$('form').validator('update');
+		var insumo_index = $(this).data("insumo-index");
+		var url = "modules/estoque/controlers/estoqueControl.php?func=getEstoque&prod_id="+rec_insumos[insumo_index].insumo_id;
+		getDados(url, function(estoque){
+			if(typeof estoque !== 'undefined' && estoque.length > 0){
+				rec_insumos[insumo_index].insumo_estoque = estoque;
+				var produto = rec_insumos[insumo_index].insumo_detalhes;
+				//Prepara o modal para o novo insumo
+				$("#modal_empenho input, #modal_empenho #estoque_id, #detalhe-estoque tbody").each(function(i, e){ 
+					$(e).val('').html('');	
+				});
+				$('#modal_empenho .modal-title').html('Empenhar "'+produto.prod_nome+'":');
+				$("#modal_empenho #estoque_prod_und span").html(produto.prod_unidade);
+				$("#modal_empenho #insumo_index").val(insumo_index);
+				$(estoque).each(function(i, e) {
+					var options = '<option value="'+ estoque[i].estoque_id +'" data-estoque-index="'+i+'">'+ estoque[i].estoque_lote +'</option>';
+					$("#modal_empenho #estoque_id").append(options);
+				});
+				$('#modal_empenho').modal("show");
+			} else {
+				bootbox.alert("Insumo sem estoque cadastrado.");
+			}
+		});
 	});
-	
+
+	$(document).on("shown.bs.modal", "#modal_empenho", function(){
+		detalheEstoque($(this).find("#insumo_index").val(), $(this).find("#estoque_id option:selected").data("estoque-index"));
+	});
+
+	$(document).on("change", "#modal_empenho #estoque_id", function(){
+		detalheEstoque($("#modal_empenho #insumo_index").val(), $(this).find("option:selected").data("estoque-index"));
+	});
+
+	$(document).on("submit", "#modal_empenho form", function(e){
+		if(!e.isDefaultPrevented()){
+			e.preventDefault();
+			insereEmpenho($(this).find("#insumo_index").val(), $(this).find("#estoque_id option:selected").data("estoque-index"), $(this).serializeArray());
+			$('#modal_empenho').modal("hide");
+		}
+	});
+
+	$(document).on("click", ".removeEmpenho", function(e){
+		e.preventDefault();
+		var insumo_index = $(this).data("insumo-index");
+		var empenho_index = $(this).data("empenho-index");
+		$("#insumo-empenho-"+insumo_index+" #empenho-"+empenho_index).remove();
+		rec_insumos[insumo_index].insumo_empenhos[empenho_index] = null;
+		empenhoTotal(insumo_index);
+	});
+
+	var submit = false;
+	$(document).on("submit", "#form-producao", function(e){
+		if(!submit){
+			e.preventDefault();
+			// Testa se todos os insumo tem lotes empenhados
+			var erros = 0;
+			var array_post = {};
+			$.each(rec_insumos, function(index, element){
+				if($.isEmptyObject(element.insumo_empenhos)) erros += 1;
+				else {
+					$.each(element.insumo_empenhos, function(index, element){
+						if(element === null) erros += 1;
+					});
+				} 
+			});
+			if(erros == 0) {
+				array_post.producao_insumos = [];
+				array_post.producao_processos = rec_processos;
+				$.each(rec_insumos, function(index, element){
+					var array_temp = {
+						"insumo_id": element.insumo_id, 
+						"insumo_quant": element.insumo_quant, 
+						"insumo_empenhos": element.insumo_empenhos
+					};
+					array_post.producao_insumos.push(array_temp);
+				});
+				$("#producao_insumos").val(JSON.stringify(array_post.producao_insumos));
+				$("#producao_processos").val(JSON.stringify(array_post.producao_processos));
+				submit = true;
+				$(this).submit();
+			} else bootbox.alert("Todos os insumos devem ter lotes empenhados nessa produção.");
+		}
+	});
 });

@@ -3,23 +3,11 @@ require_once(ABSPATH."/class/ConnDb.php");
 
 class Receita extends ConnDb{
   
-  private $campos = array("rec_prod_id", "rec_insumos", "rec_processos");
+  private $campos = array("rec_descricao","rec_prod_id", "rec_insumos", "rec_processos");
 
   public function getRecProdId($id){
     $result = $this->selectReceita("rec_prod_id", "WHERE rec_id=?", array($id));
     return $result[0]["rec_prod_id"];
-  }
-
-  public function getDuracaoTotal($id){
-    $result = $this->selectReceita("rec_processos", "WHERE rec_id=?", array($id));
-    $processos = unserialize($result[0]["rec_processos"]);
-    $duracao_total = array("h"=>0, "i"=>0);
-    foreach($processos as $processo){
-      $duracao = explode(":", $processo["processo_duracao"]);
-      $duracao_total["h"] += $duracao[0];
-      $duracao_total["i"] += $duracao[1];
-    }
-    return $duracao_total;
   }
 
   public function selectReceita($campos, $condicoes, $param){
@@ -28,7 +16,7 @@ class Receita extends ConnDb{
   }
 
   public function insertReceita($param){
-    $crud = $this->insertDb("receita", $this->campos, "?, ?, ?", array_values($param));
+    $crud = $this->insertDb("receita", $this->campos, "?, ?, ?, ?", array_values($param));
     if($crud) 
 	    $result = array('erro'=>false, 'msg'=>'Receita cadastrada com êxito!', 'objeto_id'=>$this->lastInsertId());
     else 

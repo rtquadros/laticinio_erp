@@ -4,6 +4,462 @@
 		"selected_items":
 		[
 			[
+				"input",
+				"input-group"
+			],
+			[
+				"prod",
+				"prod_unidade"
+			],
+			[
+				"tabl",
+				"table-bordered"
+			],
+			[
+				"q",
+				"insumo_quant"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"empenhar",
+				"empenhar-insumo"
+			],
+			[
+				"empenh",
+				"empenharInsumo"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"modelo",
+				"modelo_insumo"
+			],
+			[
+				"table",
+				"table-striped"
+			],
+			[
+				"item",
+				"item_insumos"
+			],
+			[
+				"no",
+				"nowrap\twhite-space"
+			],
+			[
+				"bre",
+				"word-break\tproperty"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
+				"producao",
+				"producao_id"
+			],
+			[
+				"pro",
+				"producao"
+			],
+			[
+				"estoque",
+				"estoque_lote"
+			],
+			[
+				"data",
+				"data_entrega"
+			],
+			[
+				"duraca",
+				"duracao_total"
+			],
+			[
+				"producao_data",
+				"producao_data_ordem"
+			],
+			[
+				"entr",
+				"entregues"
+			],
+			[
+				"nav",
+				"nav-link"
+			],
+			[
+				"na",
+				"nav-item"
+			],
+			[
+				"rec",
+				"rec_insumos"
+			],
+			[
+				"param",
+				"param_temp"
+			],
+			[
+				"proces",
+				"processo_equip"
+			],
+			[
+				"proce",
+				"processo_nome"
+			],
+			[
+				"processo",
+				"processo_limite"
+			],
+			[
+				"process",
+				"processo_equip"
+			],
+			[
+				"pr",
+				"processo_nome"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"in",
+				"insumo_id"
+			],
+			[
+				"insumo",
+				"insumo_quant"
+			],
+			[
+				"para",
+				"param_temp"
+			],
+			[
+				"sat",
+				"static"
+			],
+			[
+				"getProd",
+				"getProdTipos"
+			],
+			[
+				"input-group",
+				"input-group-text"
+			],
+			[
+				"per",
+				"periodo_aquisitivo"
+			],
+			[
+				"perio",
+				"periodo_aquisitivo"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"vendedor",
+				"vendedor_comissionado"
+			],
+			[
+				"pessoa",
+				"pessoa_categoria"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"pess",
+				"pessoa_variaveis"
+			],
+			[
+				"re",
+				"retorno"
+			],
+			[
+				"mov",
+				"mov_conta_id"
+			],
+			[
+				"substr",
+				"substr_count"
+			],
+			[
+				"mov_da",
+				"mov_data"
+			],
+			[
+				"mov_t",
+				"mov_categoria"
+			],
+			[
+				"select",
+				"selected"
+			],
+			[
+				"text",
+				"text-success"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"ca",
+				"categorias"
+			],
+			[
+				"tot",
+				"total_receitas"
+			],
+			[
+				"con",
+				"condicoes"
+			],
+			[
+				"sql",
+				"sql_arr"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"form-",
+				"form-row"
+			],
+			[
+				"mov_data",
+				"mov_data_ini"
+			],
+			[
+				"update",
+				"updateMovimentacao"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"up",
+				"updateDb"
+			],
+			[
+				"leite",
+				"leite_data"
+			],
+			[
+				"movime",
+				"movimentacaoLeite"
+			],
+			[
+				"mov_pa",
+				"mov_pago"
+			],
+			[
+				"FILTER",
+				"FILTER_SANITIZE_NUMBER_FLOAT"
+			],
+			[
+				"mov_parce",
+				"mov_parcela_n"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
+				"movimentacao",
+				"movimentacaoControl"
+			],
+			[
+				"PRINT",
+				"print_r"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"saldo",
+				"saldo-conta"
+			],
+			[
+				"getMov",
+				"getMovContaId"
+			],
+			[
+				"tex",
+				"text-danger"
+			],
+			[
+				"tipo",
+				"tipo_id"
+			],
+			[
+				"p",
+				"padding-bottom\tproperty"
+			],
+			[
+				"date",
+				"datepicker"
+			],
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"sel",
+				"selectMovCategoria"
+			],
+			[
+				"conta",
+				"conta_id"
+			],
+			[
+				"dele",
+				"delete-confirm"
+			],
+			[
+				"u",
+				"ucfirst"
+			],
+			[
+				"numbe",
+				"number_format"
+			],
+			[
+				"despe",
+				"despesa_projetada"
+			],
+			[
+				"rece",
+				"receita_projetada"
+			],
+			[
+				"insert",
+				"insertMovimentacao"
+			],
+			[
+				"linha",
+				"linha_id"
+			],
+			[
+				"linh",
+				"linha_id"
+			],
+			[
+				"getTo",
+				"getTotalLeiteProdutor"
+			],
+			[
+				"total",
+				"total_pagar"
+			],
+			[
+				"te",
+				"text-right"
+			],
+			[
+				"pesso",
+				"pessoa_desc"
+			],
+			[
+				"carr",
+				"carreteiro"
+			],
+			[
+				"leite_",
+				"leite_quantidade"
+			],
+			[
+				"leit",
+				"leite_data"
+			],
+			[
+				"lei",
+				"leite"
+			],
+			[
+				"cus",
+				"custo_total_leite"
+			],
+			[
+				"getT",
+				"getTotalComissaoLinha"
+			],
+			[
+				"custo",
+				"custo_total_carreto"
+			],
+			[
+				"le",
+				"leite_quantidade"
+			],
+			[
+				"dta",
+				"data_fim"
+			],
+			[
+				"a",
+				"always\tpage-break-after"
+			],
+			[
+				"page",
+				"page-break-after\tproperty"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"js",
+				"js_files"
+			],
+			[
+				"s",
+				"src\tAttr"
+			],
+			[
+				"res",
+				"result_filter"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"_",
+				"_blank"
+			],
+			[
+				"to",
+				"total_dia"
+			],
+			[
+				"cole",
+				"coleta_arr"
+			],
+			[
+				"col",
+				"coletas"
+			],
+			[
+				"di",
+				"diff"
+			],
+			[
 				"resul",
 				"result"
 			],
@@ -16,24 +472,12 @@
 				"carreteiro_nome"
 			],
 			[
-				"carr",
-				"carreteiro_nome"
-			],
-			[
 				"pagin",
 				"pagination"
 			],
 			[
 				"da",
 				"data_ini_mes"
-			],
-			[
-				"FILTER",
-				"FILTER_SANITIZE_NUMBER_INT"
-			],
-			[
-				"_",
-				"_GET"
 			],
 			[
 				"print",
@@ -70,120 +514,70 @@
 			[
 				"config",
 				"config_name"
-			],
-			[
-				"conf",
-				"config_arr"
-			],
-			[
-				"data_fim",
-				"data_fim_mes"
-			],
-			[
-				"data_ini",
-				"data_ini_2quinzena"
-			],
-			[
-				"fim_",
-				"data_fim_1quinzena"
-			],
-			[
-				"mes",
-				"mes_ref"
-			],
-			[
-				"in",
-				"input\tTag"
-			],
-			[
-				"FET",
-				"fetch_assoc"
-			],
-			[
-				"private",
-				"private"
-			],
-			[
-				"true",
-				"m_transinqueue"
-			],
-			[
-				"param",
-				"mysqli_param_count"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "modules/administracao/usuario.php",
+			"file": "modules/estoque/producao.php",
 			"settings":
 			{
-				"buffer_size": 5699,
+				"buffer_size": 15502,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/captacao/produtor.php",
+			"file": "modules/estoque/class/Receita.php",
 			"settings":
 			{
-				"buffer_size": 10704,
+				"buffer_size": 1965,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/captacao/controlers/produtorControl.php",
+			"file": "modules/estoque/estoque.php",
 			"settings":
 			{
-				"buffer_size": 2245,
+				"buffer_size": 7336,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "includes/controlersCallBack.php",
+			"file": "modules/estoque/js/controladores.js",
 			"settings":
 			{
-				"buffer_size": 644,
+				"buffer_size": 5151,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/pessoas/class/Pessoa.php",
+			"file": "modules/estoque/controlers/estoqueControl.php",
 			"settings":
 			{
-				"buffer_size": 1935,
+				"buffer_size": 2338,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/captacao/class/Produtor.php",
+			"file": "modules/estoque/controlers/receitaControl.php",
 			"settings":
 			{
-				"buffer_size": 1508,
+				"buffer_size": 2875,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/captacao/linha.php",
+			"file": "modules/estoque/controlers/produtoControl.php",
 			"settings":
 			{
-				"buffer_size": 5961,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 2441,
-				"encoding": "UTF-8",
+				"buffer_size": 2111,
 				"line_ending": "Windows"
 			}
 		}
@@ -226,62 +620,121 @@
 	[
 		"/C/xampp/htdocs/erp_dev",
 		"/C/xampp/htdocs/erp_dev/class",
-		"/C/xampp/htdocs/erp_dev/controlers",
-		"/C/xampp/htdocs/erp_dev/includes",
 		"/C/xampp/htdocs/erp_dev/modules",
-		"/C/xampp/htdocs/erp_dev/modules/administracao",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/class",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/controlers",
 		"/C/xampp/htdocs/erp_dev/modules/captacao",
-		"/C/xampp/htdocs/erp_dev/modules/captacao/class",
-		"/C/xampp/htdocs/erp_dev/modules/captacao/controlers",
-		"/C/xampp/htdocs/erp_dev/modules/pessoas",
-		"/C/xampp/htdocs/erp_dev/modules/pessoas/class"
+		"/C/xampp/htdocs/erp_dev/modules/estoque",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/class",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/controlers",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/includes",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/js",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/js"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/erp_dev/modules/pessoas/class/Pessoa.php",
-		"/C/xampp/htdocs/erp_dev/modules/captacao/class/Produtor.php",
-		"/C/xampp/htdocs/erp_dev/modules/captacao/class/Linha.php",
-		"/C/xampp/htdocs/erp_dev/modules/captacao/produtor.php",
-		"/C/xampp/htdocs/erp_dev/navigation.php",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/usuario.php",
-		"/C/xampp/htdocs/erp_dev/modules/pessoas/config.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/produto.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/class/Produto.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/controlers/produtoControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/includes/estoqueModal.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/js/controladores.js",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/movimentacao.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/producao_old.php",
+		"/C/xampp/htdocs/erp_dev/css/style.css",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/class/Estoque.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/js/controladores.js",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/receita.php",
+		"/C/xampp/htdocs/erp_dev/js/controladores.js",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/includes/etoqueModal.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/controlers/producaoControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/class/Producao.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/config.php",
 		"/C/xampp/htdocs/erp_dev/class/ConnDb.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/colaborador.php",
+		"/C/xampp/htdocs/erp_dev/loader.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/producao.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/extrato.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/includes/extratoPrint.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/includes/pagLeitePrint.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/includes/leitePrint.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/class/Receita.php",
+		"/C/xampp/htdocs/erp_dev/modules/administracao/logUsuario.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/leite.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/pagLeite.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/demonstrativo.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/includes/demonstrativoPrint.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/controlers/receitaControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/controlers/movimentacaoControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/class/Pessoa.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/controlers/colaboradorControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/controle.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/controlers/contaControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/controlers/movCategoriaControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/controlers/relacionamentoControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/administracao/controlers/usuarioControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/controlers/leiteControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/controlers/linhaControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/controlers/produtorControl.php",
+		"/C/xampp/htdocs/erp_dev/class/FilterDb.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/class/Leite.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/class/Produtor.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/produtor.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/relacionamento.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/class/Movimentacao.php",
+		"/C/xampp/htdocs/erp_dev/modules/estoque/mercadoria.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/controleFerias.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/config.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/includes/folhaPagPrint.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/folhaPag.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/controlers/pessoaControl.php",
+		"/C/xampp/htdocs/erp_dev/modules/administracao/configuracoes.php",
+		"/C/xampp/htdocs/erp_dev/modules/administracao/usuario.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/linha.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/categoria.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/config.php",
+		"/C/xampp/htdocs/erp_dev/modules/pessoas/colaboradores.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/demonstrativo_old.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/class/MovCategoria.php",
+		"/C/xampp/htdocs/erp_dev/modules/financeiro/class/Conta.php",
+		"/C/xampp/htdocs/erp_dev/includes/controlersCallBack.php",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/js/controladores.js",
+		"/C/xampp/htdocs/erp_dev/modules/captacao/class/Linha.php",
+		"/C/xampp/htdocs/erp_dev/modules/administracao/class/Configuracoes.php",
+		"/C/xampp/htdocs/erp_dev/navigation.php",
+		"/C/xampp/htdocs/erp_dev/index.php",
+		"/C/xampp/htdocs/erp_dev/header.php",
+		"/C/xampp/htdocs/erp_dev/footer.php",
+		"/C/xampp/htdocs/erp_dev/global_config.php",
+		"/C/xampp/htdocs/erp_dev/print.php",
+		"/C/xampp/htdocs/erp_dev/includes/functionsCallBack.php",
+		"/C/xampp/htdocs/erp_dev/login.php",
+		"/C/xampp/htdocs/erp_dev/includes/loginCheck.php",
+		"/C/xampp/htdocs/erp_dev/css/style_old.css",
+		"/C/xampp/htdocs/erp_dev/js/bootstrap-datepicker.min.js",
+		"/C/xampp/htdocs/erp_dev/js/datatables.min.js",
+		"/C/xampp/htdocs/erp_dev/css/bootstrap.min.css.map",
+		"/C/xampp/htdocs/erp_dev/css/bootstrap.min.css",
+		"/C/xampp/htdocs/erp_dev/css/bootstrap.css.map",
+		"/C/xampp/htdocs/erp_dev/css/bootstrap.css",
 		"/C/xampp/htdocs/erp_dev/modules/captacao/config.php",
 		"/C/xampp/htdocs/erp_dev/modules/administracao/class/Usuario.php",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/logUsuario.php",
-		"/C/xampp/htdocs/erp_dev/css/style.css",
-		"/C/xampp/htdocs/erp_dev/css/style_old.css",
-		"/C/xampp/htdocs/erp_dev/js/controladores.js",
-		"/C/xampp/htdocs/erp_dev/modules/pessoas/relacionamento.php",
-		"/C/xampp/htdocs/erp_dev/footer.php",
-		"/C/xampp/htdocs/erp_dev/header.php",
 		"/C/xampp/htdocs/erp_dev/js/jquery.dynatable.js",
 		"/C/xampp/htdocs/erp_dev/dashboard.php",
-		"/C/xampp/htdocs/erp_dev/index.php",
 		"/C/xampp/htdocs/erp_dev/modules/administracao/config.php",
-		"/C/xampp/htdocs/erp_dev/includes/controlersCallBack.php",
 		"/C/xampp/htdocs/erp_dev/class/Loguser.php",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/controlers/usuarioControl.php",
 		"/C/xampp/htdocs/erp_dev/class/LogAct.php",
 		"/C/xampp/htdocs/erp_dev/modules/administracao/controlers/adminControl.php",
 		"/C/xampp/htdocs/erp_dev/modules/pessoas/controlers/process.php",
 		"/C/xampp/htdocs/erp_dev/controlers/logControl.php",
-		"/C/xampp/htdocs/erp_dev/loader.php",
-		"/C/xampp/htdocs/erp_dev/global_config.php",
 		"/C/xampp/htdocs/erp_dev/modules/administracao/class/Usuarios.php",
-		"/C/xampp/htdocs/erp_dev/modules/administracao/class/Configuracoes.php",
 		"/C/xampp/htdocs/erp_dev/controlers/installControl.php",
 		"/C/xampp/htdocs/erp_dev/install.php",
-		"/C/xampp/htdocs/erp_dev/login.php",
 		"/C/xampp/htdocs/erp_dev/class/SystemVar.php",
 		"/C/xampp/htdocs/wordpress/wp-settings.php",
 		"/C/xampp/htdocs/phpinfo.php"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -298,47 +751,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"administracao",
-			"usuario",
-			"$result",
-			"captacao",
-			"tabindex",
-			"row-form",
-			"input-sm",
-			"form-control",
-			"$_get[\"func\"]",
-			"$funcao",
-			"linhas",
-			"Pessoa",
-			"rel_",
-			"Usuario",
+			"console",
+			"prod_",
+			"produto",
+			"modal_acoes",
+			"data",
+			"modal",
+			"modal_acoes",
+			"exampleModalLabel",
+			"$row[\"producao_prod_id\"]",
+			"$receita->getRecProdId($row[\"producao_rec_id\"])",
+			"$produto->getNomeProduto($receita->getRecProdId($row[\"producao_rec_id\"]))",
+			"table-condensed",
+			"modal",
+			"exampleModalLabel",
+			"prod_id",
+			"produto",
+			"prod",
 			"`",
-			"dynatable",
-			"dynatable-page",
-			"li",
-			"records",
-			"record-count",
-			"form-control",
-			"usu_modules",
-			"$func",
+			"produto",
+			"Produto",
+			"`",
+			"data_validade",
+			"data_fabricacao",
+			"fa-alert",
+			"echo $mes_ref;",
+			"new datetime",
+			"datetime",
+			"$data_arr[$i][1]->format(\"d/m/Y\")",
+			"$data_arr[$i][0]->format(\"d/m/Y\")",
+			"echo $mes_ref;",
+			"$data_arr[$i][1]->format(\"j\")",
+			"$data_arr[$i][0]->format(\"j\")",
+			"date(\"j\")",
+			"echo $mes_ref->format('m/y')",
+			"echo $mes_ref->format('m/y');",
+			"echo $mes_ref",
+			"$data_arr[$i][1]->format(\"j\")",
+			"$data_arr[$i][0]->format(\"j\")",
+			"date(\"j\")",
+			"$data_arr",
+			"$mes",
+			"$total_dias_mes",
+			"$data_fim_mes->format(\"Y-m-d\")",
+			"$data_fim_mes",
+			"$data_ini_2quinzena",
+			"$data_fim_1quinzena",
+			"$data_ini_mes->format(\"Y-m-d\")",
+			"$data_ini_mes",
+			"$mes_ref",
+			"datetime",
+			"new datetime",
+			"$mes_ref",
+			"new datetime",
+			"datetime",
+			"dateinterval",
+			"prod_id",
+			"produto",
+			"rec_id",
+			"`",
+			"Receita",
+			"prod_id",
+			"if(isset($_GET))",
+			"if(isset($_POST))",
+			"isset($_POST)",
+			"rec_rec_id",
+			"prod_id",
+			"produto",
+			"fa-move",
+			"move",
+			"plus-sign",
+			"glyphicon",
+			"prod_id",
+			"`",
+			"Produto",
+			"$rec",
+			"prod_id",
+			"produto",
+			"ucfirst",
+			"pessoa",
+			"$prod",
+			"`",
+			"producao_",
+			"rel_",
+			"mov_",
+			"relacionamento",
+			"pessoaControl",
+			"rel_",
+			"$var",
+			"$result",
+			"rel_",
+			"row",
+			"MovCategoria",
+			"$cat",
+			"row",
+			"$result",
+			"rel_",
+			"mov",
+			"$conta",
+			"$movCategoria",
+			"$cat",
+			"$cats",
+			"$movimentacao",
+			"$parametros",
+			"$cat[",
+			"$cats",
+			"$cat",
+			"getMovCategoria",
+			"$movCategoria",
+			"$movimentacao",
+			"$parametros",
+			"$movimentacao",
+			"$parametros",
+			"$movimentacao",
+			"$parametros",
+			"$data_ref",
+			"$movimentacao",
+			"parametros_",
+			"mov_data_fim",
+			"mov_data_ini",
 			"funcao",
-			"btn-default",
-			"getUsuario",
-			"selectUsuarios",
-			"mod=administracao_usuario",
-			"'",
-			".'",
-			"'.",
-			"$config",
-			"$default_modules_folder",
-			"$this->",
-			"$",
-			"protected ",
-			"\t",
-			"//check if loggedin\n    function logincheck($logincode, $logintime){\n        //conect to DB\n       \t$db = new Db;\n        $timeDiffernce = time() - $logintime;\n    \tif ($timeDiffernce > 86400){\n\t\t\t$this->logout();\n\t\t} else {\n\t\t\t//exectue query\n\t\t\t$result = $db->query(\"SELECT * FROM \".$this->user_table.\" WHERE \".$this->user_column.\" = '\".$logincode.\"'\");\n\t\t\t//return true if logged in and false if not\n\t\t\tif($result){\n\t\t\t\t$row = $result->fetch_assoc();\n\t\t\t\t$rownum = $result->num_rows;\n\t\t\t\tif($rownum > 0){\n\t\t\t\t\t//Seta os modules que o usuário tem acesso\n\t\t\t\t\t$this->user_modules = $row['usu_modules'];\n\t\t\t\t\treturn true;\n\t\t\t\t}else{\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t} else return false;\n\t\t}\n    }",
-			"query",
-			"crud",
-			"Conn"
+			"mov_tipo",
+			"$_POST",
+			"$conta_id",
+			"$row",
+			"MovCategoria",
+			"mov_data_ini",
+			"rel_",
+			"filter_input"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -346,39 +886,134 @@
 		"regex": false,
 		"replace_history":
 		[
-			"captacao",
-			"produtor",
+			"estoque_",
+			"estoque",
+			"modal_empenho",
+			"$receita->getRecProdId($row[\"producao_rec_id\"])",
+			"$row[\"producao_prod_id\"]",
+			"$produto->getNomeProduto($row[\"producao_prod_id\"])",
+			"table-sm",
+			"estoqueModal",
+			"estoque_id",
+			"estoque",
+			"\"",
+			"estoque",
+			"Produto",
+			"Estoque",
+			"\"",
+			"estoque_validade",
+			"estoque_fabricacao",
+			"fa-exclamation-triangle",
+			"echo $mes_ref->format('m/Y');",
+			"$mes_ref->format(\"{$data_arr[$i][1]}/m/Y\")",
+			"$mes_ref->format(\"{$data_arr[$i][0]}/m/Y\")",
+			"echo $mes_ref->format(\"m/Y\");",
+			"$data_arr[$i][1]",
+			"$data_arr[$i][0]",
+			"$today->format(\"j\")",
+			"echo $mes_ref->format('m/Y')",
+			"echo $mes_ref->format('m/Y');",
+			"$data_arr[$i][1]",
+			"$data_arr[$i][0]",
+			"$today->format(\"j\")",
+			"$mes_ref->format(\"t\")",
+			"$mes_ref->format(\"Y-m-t\")",
+			"$mes_ref->format(\"Y-m-01\")",
+			"producao_id",
+			"producao",
+			"producao_id",
+			"\"",
+			"Producao",
+			"producao_id",
+			"if(isset($_GET) && !empty($_GET))",
+			"if(isset($_POST) && !empty($_POST))",
+			"isset($_POST) && !empty($_POST)",
+			"rec_prod_id",
+			"rec_id",
+			"receita",
+			"fa-arrows-alt",
+			"plus-circle",
+			"fa",
+			"rec_id",
+			"\"",
+			"Receita",
 			"$retorno",
-			"administracao",
-			"form-row",
-			"form-control-sm",
-			"form-control input-sm",
-			"$_GET[\"func\"]",
-			"Linha",
-			"pessoa_",
-			"Pessoa",
+			"rec_id",
+			"receita",
+			"produto",
+			"$retorno",
 			"\"",
-			"datatable",
-			"usu_modulos",
-			"$_GET[\"func\"]",
-			"func",
-			"btn-secondary",
-			"selectUsuario",
-			"mod=administracao&pag=usuario",
-			"\"",
-			"}",
-			"{",
-			"$result",
-			"MODULES_ABSPATH",
-			"$",
-			"$this->",
-			"private ",
-			"private",
 			"",
-			"  ",
-			"crud",
-			"query",
-			"conn"
+			"pessoa_",
+			"",
+			"colaborador",
+			"colaboradorControl",
+			"relacionamentoControl",
+			"pessoa_",
+			"$pessoa_variaveis",
+			"$retorno",
+			"pessoa_",
+			"form-row",
+			"Pessoa",
+			"$pessoa",
+			"form-row",
+			"$retorno",
+			"pessoa_",
+			"pessoa",
+			"$cat",
+			"$value",
+			"$categorias",
+			"$mov",
+			"$param",
+			"$value[",
+			"$categorias",
+			"$cat",
+			"$mov",
+			"$param",
+			"$mov",
+			"$param",
+			"$mov",
+			"$param",
+			"$mov",
+			"param_",
+			"data_comp",
+			"data_ref",
+			"func",
+			"cat_tipo",
+			"$value",
+			"pessoa_",
+			"getConfig",
+			"mov_tipo",
+			"modal_acoes",
+			"Conta",
+			"$conta",
+			"\"",
+			"fas fa",
+			"financeiro",
+			"Movimentacao",
+			"$mov",
+			"categorias_movimentacao",
+			"categoria_movimentacao",
+			"MovCategoria",
+			"\"",
+			"$value",
+			"card",
+			"",
+			"card",
+			"$mov_tipo",
+			"mov_tipo",
+			"$mov",
+			"tipo_id",
+			"mov_data",
+			"conta",
+			"\"",
+			"mov_id",
+			"Movimentacao",
+			"\"",
+			"data_fim",
+			"data_ini",
+			"$data_fim",
+			"$data_ini"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -394,59 +1029,59 @@
 			[
 				{
 					"buffer": 0,
-					"file": "modules/administracao/usuario.php",
+					"file": "modules/estoque/producao.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5699,
+						"buffer_size": 15502,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								654,
-								647
+								2021,
+								2021
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 320.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "modules/captacao/produtor.php",
+					"file": "modules/estoque/class/Receita.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10704,
+						"buffer_size": 1965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								599,
-								599
+								176,
+								188
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1109.0,
+						"translation.y": 405.333333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -454,167 +1089,131 @@
 				},
 				{
 					"buffer": 2,
-					"file": "modules/captacao/controlers/produtorControl.php",
+					"file": "modules/estoque/estoque.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2245,
+						"buffer_size": 7336,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1952,
-								1952
+								1088,
+								4102
 							]
 						],
 						"settings":
 						{
+							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 610.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "includes/controlersCallBack.php",
+					"file": "modules/estoque/js/controladores.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 644,
+						"buffer_size": 5151,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								616,
-								616
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "modules/pessoas/class/Pessoa.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1935,
-						"regions":
-						{
-						},
-						"selection":
-						[
+								2865,
+								2865
+							],
 							[
-								1024,
-								1024
+								3316,
+								3316
+							],
+							[
+								3373,
+								3373
+							],
+							[
+								3492,
+								3492
+							],
+							[
+								3536,
+								3536
+							],
+							[
+								3729,
+								3729
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 323.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "modules/captacao/class/Produtor.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1067,
-								1067
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 381.333333333,
+						"translation.y": 1152.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "modules/captacao/linha.php",
-					"semi_transient": true,
+					"buffer": 4,
+					"file": "modules/estoque/controlers/estoqueControl.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5961,
+						"buffer_size": 2338,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2231,
+								2231
 							]
 						],
 						"settings":
 						{
+							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "index.php",
+					"buffer": 5,
+					"file": "modules/estoque/controlers/receitaControl.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2441,
+						"buffer_size": 2875,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								982,
-								982
+								2324,
+								2324
 							]
 						],
 						"settings":
@@ -624,10 +1223,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 172.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "modules/estoque/controlers/produtoControl.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1964,
+								1904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -635,11 +1264,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 31.0
 	},
 	"input":
 	{
-		"height": 40.0
+		"height": 43.0
 	},
 	"layout":
 	{
@@ -672,7 +1301,7 @@
 	"project": "erp_dev.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 78.0
 	},
 	"save_all_on_build": true,
 	"select_file":

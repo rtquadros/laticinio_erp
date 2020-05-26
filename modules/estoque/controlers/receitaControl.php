@@ -4,11 +4,11 @@ $header = "../../../index.php?mod=estoque&pag=receita&func=visualizar";
 
 if(isset($_GET['func']) && !empty($_GET['func'])){
   $receita = new Receita();
-  $produto = new Produto();
 
   // Trata os inputs
   if(isset($_POST) && !empty($_POST)){
     $args = array(
+      "rec_descricao" => FILTER_SANITIZE_SPECIAL_CHARS,
       "rec_prod_id" => FILTER_SANITIZE_NUMBER_INT,
       "insumo_id" => array('filter' => FILTER_SANITIZE_NUMBER_INT, 'flags' => FILTER_REQUIRE_ARRAY), 
       "insumo_quant" => array("filter"=>FILTER_CALLBACK, "options"=>array("FilterDb", "sanitizeMoney")),
@@ -19,6 +19,7 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
     );
     $param_temp = filter_input_array(INPUT_POST, $args);
     
+    $param["rec_descricao"] = $param_temp["rec_descricao"];
     $param["rec_prod_id"] = $param_temp["rec_prod_id"];
     // Monta os parametros rec_insumos e rec_processos
     foreach($param_temp["insumo_id"] as $key => $insumo_id){
@@ -50,12 +51,10 @@ if(isset($_GET['func']) && !empty($_GET['func'])){
     }
   }
   if($_GET['func'] == 'getReceita'){
-    $prod = $produto->getUnidadeProduto($receita->getRecProdId($id));
-    $result["produtoUnd"] = $prod;
-    $rec = $receita->selectReceita("*", "WHERE rec_id=?", array($id));
-    $result['itens_processos'] = unserialize($rec[0]['rec_processos']);
-    $result['itens_insumos'] = unserialize($rec[0]['rec_insumos']);
-    echo json_encode($result);
+    $result = $receita->selectReceita("*", "WHERE rec_id=?", array($id));
+    $result[0]['rec_processos'] = unserialize($result[0]['rec_processos']);
+    $result[0]['rec_insumos'] = unserialize($result[0]['rec_insumos']);
+    echo json_encode($result[0]);
     exit();
   }
 

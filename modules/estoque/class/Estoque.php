@@ -3,7 +3,7 @@ require_once(ABSPATH."/class/ConnDb.php");
 
 class Estoque extends ConnDb{
   
-  private $campos = array("estoque_prod_id", "estoque_lote", "estoque_entrada_id", "estoque_data_entrada", "estoque_quant_entrada", "estoque_quantidade", "estoque_saida_id", "estoque_fabricacao", "estoque_validade", "estoque_custo");
+  private $campos = array("estoque_prod_id", "estoque_lote", "estoque_entrada_id", "estoque_data_entrada", "estoque_quant_entrada", "estoque_quant_atual", "estoque_saida_id", "estoque_fabricacao", "estoque_validade", "estoque_custo");
 
   public function selectEstoque($campos, $condicoes, $param){
     $result = $this->selectDb($campos, "estoque", $condicoes, $param);
@@ -11,7 +11,9 @@ class Estoque extends ConnDb{
   }
 
   public function insertEstoque($param){
-    $crud = $this->insertDb("estoque", $this->campos, "?, ?, ?, ?, ?, ?, ?, ?, ?", array_values($param));
+    $campos = $this->campos;
+    array_splice($campos, 6, 1);
+    $crud = $this->insertDb("estoque", $campos, "?, ?, ?, ?, ?, ?, ?, ?, ?", array_values($param));
     if($crud) 
 	    $result = array('erro'=>false, 'msg'=>'Estoque cadastrado com êxito!', 'objeto_id'=>$this->lastInsertId());
     else 

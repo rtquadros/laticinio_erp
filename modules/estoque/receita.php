@@ -22,6 +22,12 @@ if($_GET["func"] == 'cadastrar'){
   <div class="row">
     <div class="col-md-3">
       <div class="form-group">
+        <label for="rec_descricao">Descrição</label>
+        <input type="text" name="rec_descricao" id="rec_descricao" class="form-control" value="<?php echo isset($retorno) ? $retorno[0]['rec_descricao'] : ""; ?>" required>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
         <label for="rec_prod_id">Produto</label>
         <select id="rec_prod_id" name="rec_prod_id" class="form-control" required>
         <?php
@@ -150,7 +156,11 @@ if($_GET["func"] == 'cadastrar'){
 		?>
     	  <tr>
         	<td><?php echo $row['rec_id']; ?></td>
-            <td><a href="?mod=estoque&pag=receita&func=editar&rec_id=<?php echo $row['rec_id']; ?>"><?php echo $produto->getNomeProduto($row['rec_prod_id']); ?></a></td>
+            <td>
+              <a href="?mod=estoque&pag=receita&func=editar&rec_id=<?php echo $row['rec_id']; ?>">
+                <?php echo !empty($row["rec_descricao"]) ? $row["rec_descricao"] : $produto->getNomeProduto($row["rec_prod_id"]); ?>
+              </a>
+            </td>
             <td>
               <table class="table table-sm table-bordered table-striped">
             	<thead>

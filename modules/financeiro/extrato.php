@@ -39,7 +39,7 @@ $mov_tipo_nome = $mov->getMovTipos();
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <form method="get" action="modules/financeiro/controlers/movimentacaoControl.php">
-            <div class="modal-header">
+            <div class="modal-header py-1">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h5 class="modal-title" id="exampleModalLabel">Mover registro para:</h5>
             </div>

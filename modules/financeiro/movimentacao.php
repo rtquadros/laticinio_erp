@@ -186,7 +186,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
           	<form method="get" action="modules/financeiro/controlers/movimentacaoControl.php">
-                <div class="modal-header">
+                <div class="modal-header py-1">
                   <h5 class="modal-title" id="exampleModalLabel">Mover registro para:</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
@@ -351,7 +351,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                     <th>Categoria</th>
                     <th class="text-right" style="width:8em;">Valor</th>
                     <th class="text-center" style="width:4em;">Pago</th>
-                    <th></th>
+                    <th class="d-none d-sm-table-cell"></th>
                   </tr> 
                 </thead>
                 <tbody>  
@@ -360,7 +360,7 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
                 foreach($retorno as $key=>$value){
                 ?>
                   <tr> 
-                	<td><div class="form-check"><input class="form-check-input position-static switch-btn" type="checkbox" value="<?php echo $value['mov_id']; ?>" /></div></td>
+                	<td class="text-center"><div class="form-check"><input class="form-check-input position-static switch-btn" type="checkbox" value="<?php echo $value['mov_id']; ?>" /></div></td>
                     <td>      
                       <?php 
                       $filter = new FilterDb();
@@ -395,20 +395,18 @@ if(isset($_GET["func"]) && ($_GET["func"] == 'cadastrar' || $_GET["func"] == 'ed
 							<?php echo 'R$ '.number_format($value['mov_valor'], 2, ',', '.');?>
                     	</span>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input mov_pago" id="receita-<?php echo $value['mov_id'];?>" <?php if($value['mov_pago']) echo 'checked'; ?> data-id="<?php echo $value['mov_id'];?>">
                           <label class="custom-control-label" for="receita-<?php echo $value['mov_id'];?>"><span class="sr-only">Movimento pago</span></label>
                         </div>
                     </td>
-                    <td>
-                    	<div class="hidden-xs" style="word-break: keep-all;">
-                            <a href="modules/financeiro/controlers/movimentacaoControl.php?func=deleteMovimentacao&mov_id=<?php echo $value['mov_id']; ?>" title="Excluir" class="delete-confirm text-danger"><span class="fas fa-trash"></span></a>
-                            &nbsp;
-                            <a href="#" title="Mover" class="move-movimentacao" data-mov-id="<?php echo $value['mov_id']; ?>"><span class="fas fa-exchange-alt"></span></a>
-                            &nbsp;
-                            <a href="#" title="Copiar" class="duplica-movimentacao" data-mov-id="<?php echo $value['mov_id']; ?>"><span class="fas fa-copy"></span></a>
-                        </div>
+                    <td class="text-center d-none d-sm-table-cell">
+                      <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" title="Mover" class="move-movimentacao" data-mov-id="<?php echo $value['mov_id']; ?>"><span class="fas fa-exchange-alt"></span> <span class="sr-only">Mover</span></a></li>
+                        <li class="list-inline-item"><a href="#" title="Copiar" class="duplica-movimentacao" data-mov-id="<?php echo $value['mov_id']; ?>"><span class="fas fa-copy"></span> <span class="sr-only">Copiar</span></a></li>
+                        <li class="list-inline-item"><a href="modules/financeiro/controlers/movimentacaoControl.php?func=deleteMovimentacao&mov_id=<?php echo $value['mov_id']; ?>" title="Excluir" class="delete-confirm text-danger"><span class="fas fa-trash"></span> <span class="sr-only">Excluir</span></a></li>
+                      </ul>
                     </td>
                 </tr>
         <?php }?>

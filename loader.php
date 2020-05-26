@@ -73,7 +73,7 @@ if(isset($_POST['mes_ref']) && !empty($_POST['mes_ref'])){
   $mes_ref = explode("/", $mes_ref);
   $mes_ref = new DateTime("{$mes_ref[1]}-$mes_ref[0]-01");
   $_SESSION['mes_ref'] = $mes_ref->format("Y-m-d");
-} elseif(isset($_SESSION['mes_ref']) && !empty($_SESSION['mes_ref'])) {
+} elseif(isset($_SESSION['mes_ref']) && !empty($_SESSION['mes_ref']) && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$_SESSION['mes_ref'])) {
   $mes_ref = new DateTime($_SESSION['mes_ref']);
 } else {
   $mes_ref = new DateTime();
